@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Chad Weaver</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --text: #1a1a1a;
+    --muted: #6b6b6b;
+    --border: #e8e8e8;
+    --bg: #ffffff;
+    --accent: #7868b0;
+    --accent-dark: #44337a;
+    --tag-bg: #eceaf6;
+    --tag-text: #44337a;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --text: #f0f0f0;
+      --muted: #9a9a9a;
+      --border: #2a2a2a;
+      --bg: #111111;
+      --accent: #9d8fd4;
+      --accent-dark: #b8aadf;
+      --tag-bg: #1e1a2e;
+      --tag-text: #b8aadf;
+    }
+  }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 16px; }
+  a { color: var(--accent-dark); text-decoration: none; }
+  a:hover { color: var(--accent); text-decoration: underline; }
+  .container { max-width: 680px; margin: 0 auto; padding: 0 24px; }
+
+  nav { border-bottom: 1px solid var(--border); padding: 20px 0; }
+  nav .inner { max-width: 680px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
+  nav .logo { font-size: 15px; font-weight: 500; color: var(--text); }
+  nav .links { display: flex; gap: 24px; }
+  nav .links a { font-size: 14px; color: var(--muted); }
+  nav .links a:hover { color: var(--accent-dark); text-decoration: none; }
+
+  .hero { padding: 72px 0 56px; }
+  .hero h1 { font-size: 32px; font-weight: 500; letter-spacing: -0.5px; margin-bottom: 16px; color: var(--text); }
+  .hero p { font-size: 17px; color: var(--muted); line-height: 1.75; max-width: 560px; }
+  .hero p + p { margin-top: 14px; }
+
+  section { padding: 48px 0; border-top: 1px solid var(--border); }
+  section h2 { font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.09em; color: var(--muted); margin-bottom: 28px; }
+
+  .projects { display: flex; flex-direction: column; gap: 14px; }
+  .project-card { background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 20px 24px; }
+  .project-card h3 { font-size: 15px; font-weight: 500; margin-bottom: 6px; color: var(--text); }
+  .project-card p { font-size: 14px; color: var(--muted); line-height: 1.6; }
+  .project-tag { display: inline-block; font-size: 11px; font-weight: 500; background: var(--tag-bg); color: var(--tag-text); padding: 3px 9px; border-radius: 99px; margin-top: 12px; margin-right: 4px; }
+
+  .work-list { display: flex; flex-direction: column; gap: 20px; }
+  .work-item { display: flex; gap: 20px; }
+  .work-year { font-size: 13px; color: var(--muted); min-width: 80px; padding-top: 2px; }
+  .work-detail h3 { font-size: 15px; font-weight: 500; color: var(--text); }
+  .work-detail p { font-size: 14px; color: var(--muted); margin-top: 2px; }
+
+  .skills { display: flex; flex-wrap: wrap; gap: 8px; }
+  .skill { font-size: 13px; background: var(--tag-bg); color: var(--tag-text); padding: 5px 13px; border-radius: 99px; }
+
+  .contact-links { display: flex; gap: 20px; flex-wrap: wrap; }
+  .contact-links a { font-size: 15px; color: var(--accent-dark); }
+  .contact-links a:hover { color: var(--accent); }
+
+  footer { border-top: 1px solid var(--border); padding: 28px 0; margin-top: 8px; }
+  footer p { font-size: 13px; color: var(--muted); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="inner">
+    <span class="logo">Chad Weaver</span>
+    <div class="links">
+      <a href="#projects">Projects</a>
+      <a href="#work">Work</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+
+  <div class="hero">
+    <h1>Data analyst,<br>tool builder.</h1>
+    <p>I'm a data analyst based in Chicago with 5+ years of experience turning complex data into decisions that matter. At McDonald's I work across global delivery analytics — building dashboards, automating data pipelines, and making sure the right people have the right information at the right time.</p>
+    <p>Outside of my day job I build tools at the intersection of data, civic tech, and collective reasoning — things that help people think more clearly and make better decisions together.</p>
+    <p>I care about mission-driven work, sustainability, and using technology to solve problems that actually matter.</p>
+  </div>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="project-card">
+        <h3>Argument Evaluator</h3>
+        <p>A tool for building and stress-testing arguments. Add claims for or against any assertion and get AI-powered fallacy detection and logical analysis.</p>
+        <span class="project-tag">AI</span>
+        <span class="project-tag">Critical thinking</span>
+        <span class="project-tag">Civic tech</span>
+      </div>
+      <div class="project-card">
+        <h3>More coming soon</h3>
+        <p>Currently building tools around data, collective reasoning, and epistemic infrastructure.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <h2>Work history</h2>
+    <div class="work-list">
+      <div class="work-item">
+        <span class="work-year">2022 – now</span>
+        <div class="work-detail">
+          <h3>Business Insights Analyst — McDonald's</h3>
+          <p>Global delivery analytics, Tableau dashboards, SQL, Alteryx ETL pipelines.</p>
+        </div>
+      </div>
+      <div class="work-item">
+        <span class="work-year">2021 – 2022</span>
+        <div class="work-detail">
+          <h3>Data Analyst — divvyDOSE</h3>
+          <p>Operations analytics, Looker dashboards, LookML.</p>
+        </div>
+      </div>
+      <div class="work-item">
+        <span class="work-year">2020 – 2021</span>
+        <div class="work-detail">
+          <h3>Data Visualization Analyst — Stericycle</h3>
+          <p>Tableau, Alteryx, revenue ops and KPI reporting.</p>
+        </div>
+      </div>
+      <div class="work-item">
+        <span class="work-year">2019 – 2020</span>
+        <div class="work-detail">
+          <h3>Associate Developer — Infosys</h3>
+          <p>Automated testing, Agile, Java, Python.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills & tools</h2>
+    <div class="skills">
+      <span class="skill">Tableau</span>
+      <span class="skill">SQL</span>
+      <span class="skill">Alteryx</span>
+      <span class="skill">Looker / LookML</span>
+      <span class="skill">Python</span>
+      <span class="skill">Excel</span>
+      <span class="skill">Google BigQuery</span>
+      <span class="skill">ETL / data pipelines</span>
+      <span class="skill">Data storytelling</span>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-links">
+      <a href="mailto:chadw913@icloud.com">Email</a>
+      <a href="https://www.linkedin.com/in/cweaver13/" target="_blank">LinkedIn</a>
+      <a href="https://github.com/" target="_blank">GitHub</a>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Chad Weaver · Chicago, IL</p>
+  </div>
+</footer>
+
+</body>
+</html>
