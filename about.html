@@ -93,11 +93,11 @@ nav {
 /* ── FOOTER ── */
 .site-footer {
   border-top: var(--border); padding: 24px 48px;
-  display: flex; justify-content: space-between; align-items: center;
+  display: flex; justify-content: center; gap: 16px; align-items: center;
   max-width: 1100px; margin: 0 auto;
 }
-.foot-name { font-family: var(--fm); font-size: 12px; color: #aaa; letter-spacing: 0.04em; }
-.foot-year { font-family: var(--fm); font-size: 12px; color: #aaa; letter-spacing: 0.04em; }
+.foot-name { font-family: var(--ff); font-size: 13px; color: #aaa; }
+.foot-year { font-family: var(--ff); font-size: 13px; color: #aaa; }
 
 @media (max-width: 700px) {
   .site-footer { padding: 20px 24px; }
@@ -255,18 +255,18 @@ nav {
       column-gap: 16px;
       row-gap: 24px;
       padding: 48px 24px;
-      align-items: center;
+      align-items: start;
     }
     .about-eyebrow { margin-bottom: 8px; }
     .about-name { font-size: clamp(24px, 7vw, 36px); margin-bottom: 0; }
+    .about-photo-col { align-self: stretch; display: flex; }
     .photo-box {
-      width: 72px;
-      height: 72px;
+      width: auto;
+      height: 100%;
       border-radius: 50%;
       aspect-ratio: 1;
-      border: none;
+      border: var(--border);
       background: none;
-      box-shadow: 0 0 0 2px var(--bg), 0 0 0 3.5px #d0cbc2;
       overflow: hidden;
     }
     .photo-box img { object-position: center top; }
@@ -275,7 +275,8 @@ nav {
     .value-card { border-right: none; border-bottom: var(--border); }
     .value-card:last-child { border-bottom: none; }
     .now-grid { grid-template-columns: 1fr; }
-    .now-item { border-right: none !important; }
+    .now-item { border-right: none !important; border-bottom: var(--border); }
+    .now-item:last-child { border-bottom: none; }
     .cta-strip { flex-direction: column; gap: 24px; padding: 32px 24px; }
   }
 </style>
@@ -373,7 +374,7 @@ nav {
 </div>
 
 <footer class="site-footer">
-  <span class="foot-name">CHAD WEAVER © 2026</span>
+  <span class="foot-name">Chad Weaver © 2026</span>
   <span class="foot-year">Chicago, IL</span>
 </footer>
 
