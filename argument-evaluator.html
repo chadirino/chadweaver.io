@@ -122,13 +122,6 @@ nav {
 
   .project-meta { display: flex; align-items: center; gap: 12px; }
 
-  .project-status-wip {
-    font-family: var(--fm); font-size: 10px; letter-spacing: 0.1em;
-    text-transform: uppercase; padding: 5px 10px;
-    background: var(--orange-light); color: var(--orange);
-    border: 1.5px solid var(--orange); border-radius: var(--radius);
-  }
-
   .project-hero-title {
     font-size: clamp(36px, 5vw, 72px); font-weight: 700;
     line-height: 1.0; letter-spacing: -0.03em; margin-bottom: 20px;
@@ -282,6 +275,9 @@ nav {
 
   @media (max-width: 700px) {
     .project-hero { padding: 32px 24px 0; }
+    .project-hero { padding: 32px 24px 0; }
+    .project-hero-top { flex-wrap: wrap; gap: 16px; }
+    .tag { white-space: nowrap; }
     main { padding: 0 24px; }
     .placeholder-strip { grid-template-columns: 1fr; height: auto; }
     .placeholder-main { height: 200px; border-right: none; border-bottom: var(--border); }
@@ -312,7 +308,7 @@ nav {
     <div class="project-meta">
       <span class="tag">AI</span>
       <span class="tag">Critical thinking</span>
-      <span class="project-status-wip">⧗ In progress</span>
+      <span class="tag">In progress</span>
     </div>
   </div>
 
@@ -399,7 +395,7 @@ nav {
   <div class="next-col">
     <div>
       <div class="next-eyebrow">Previous project</div>
-      <a href="civic-compass.html" class="next-title">← Civic Compass</a>
+      <a href="civic-compass.html" class="next-title">Civic Compass</a>
     </div>
     <a href="civic-compass.html" class="next-arrow">←</a>
   </div>
