@@ -96,8 +96,8 @@ nav {
   display: flex; justify-content: center; gap: 16px; align-items: center;
   max-width: 1100px; margin: 0 auto;
 }
-.foot-name { font-family: var(--ff); font-size: 13px; color: #aaa; }
-.foot-year { font-family: var(--ff); font-size: 13px; color: #aaa; }
+.foot-name { font-family: var(--ff); font-size: 13px; color: #aaa; text-transform: uppercase; }
+.foot-year { font-family: var(--ff); font-size: 13px; color: #aaa; text-transform: uppercase; }
 
 @media (max-width: 700px) {
   .site-footer { padding: 20px 24px; }
@@ -269,6 +269,8 @@ nav {
 
   @media (max-width: 700px) {
     .project-hero { padding: 32px 24px 0; }
+    .project-hero-top { flex-wrap: wrap; gap: 16px; }
+    .tag { white-space: nowrap; }
     main { padding: 0 24px; }
     .screenshot-strip { grid-template-columns: 1fr; height: auto; }
     .screenshot-main { height: 260px; border-right: none; border-bottom: var(--border); }
@@ -307,7 +309,7 @@ nav {
   <p class="project-tagline reveal">A civic tech tool that helps people discover their moral archetype and understand politics from the inside out.</p>
 
   <div class="project-links reveal">
-    <a href="https://civic-compass-rose.vercel.app" target="_blank" class="project-link-btn primary">Visit live site ↗</a>
+    <a href="https://civic-compass-rose.vercel.app" target="_blank" class="project-link-btn primary">Visit live site <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="2.5" y1="10.5" x2="10.5" y2="2.5"/><polyline points="4.5,2.5 10.5,2.5 10.5,8.5"/></svg></a>
     <a href="https://github.com/chadirino" target="_blank" class="project-link-btn">GitHub →</a>
   </div>
 
