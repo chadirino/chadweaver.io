@@ -4,8 +4,13 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Chad Weaver</title>
+<script>
+  (function(){var t=localStorage.getItem('theme-pref');if(t&&t!=='auto')document.documentElement.setAttribute('data-theme',t);})();
+</script>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  /* Light theme (default) */
   :root {
     --text: #1a1a1a;
     --muted: #6b6b6b;
@@ -15,9 +20,17 @@
     --accent-dark: #44337a;
     --tag-bg: #eceaf6;
     --tag-text: #44337a;
+    --btn-bg: #534AB7;
+    --btn-hover: #3f3890;
+    --toggle-track: #f0f0f0;
+    --toggle-active: #ffffff;
+    --toggle-icon: #999;
+    --toggle-icon-active: #222;
   }
+
+  /* Auto dark — system preference, skipped when user forced light */
   @media (prefers-color-scheme: dark) {
-    :root {
+    :root:not([data-theme="light"]) {
       --text: #f0f0f0;
       --muted: #9a9a9a;
       --border: #2a2a2a;
@@ -26,8 +39,40 @@
       --accent-dark: #b8aadf;
       --tag-bg: #1e1a2e;
       --tag-text: #b8aadf;
+      --btn-bg: #6b5fd4;
+      --btn-hover: #534AB7;
+      --toggle-track: #1e1e1e;
+      --toggle-active: #2e2e2e;
+      --toggle-icon: #666;
+      --toggle-icon-active: #eee;
     }
   }
+
+  /* Forced dark */
+  html[data-theme="dark"] {
+    --text: #f0f0f0;
+    --muted: #9a9a9a;
+    --border: #2a2a2a;
+    --bg: #111111;
+    --accent: #9d8fd4;
+    --accent-dark: #b8aadf;
+    --tag-bg: #1e1a2e;
+    --tag-text: #b8aadf;
+    --btn-bg: #6b5fd4;
+    --btn-hover: #534AB7;
+    --toggle-track: #1e1e1e;
+    --toggle-active: #2e2e2e;
+    --toggle-icon: #666;
+    --toggle-icon-active: #eee;
+  }
+
+  /* Smooth theme transitions */
+  html { background: var(--bg); }
+  html, body, nav, .project-card, .skill, .project-tag, footer,
+  .theme-toggle, section { transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease; }
+  .theme-btn { transition: background-color 200ms ease, color 200ms ease, box-shadow 200ms ease; }
+  .project-link { transition: background-color 200ms ease; }
+
   body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 16px; }
   a { color: var(--accent-dark); text-decoration: none; }
   a:hover { color: var(--accent); text-decoration: underline; }
@@ -36,9 +81,39 @@
   nav { border-bottom: 1px solid var(--border); padding: 20px 0; }
   nav .inner { max-width: 680px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
   nav .logo { font-size: 15px; font-weight: 500; color: var(--text); }
+  nav .right { display: flex; align-items: center; gap: 20px; }
   nav .links { display: flex; gap: 24px; }
   nav .links a { font-size: 14px; color: var(--muted); }
   nav .links a:hover { color: var(--accent-dark); text-decoration: none; }
+
+  /* Theme toggle pill */
+  .theme-toggle {
+    display: flex;
+    align-items: center;
+    background: var(--toggle-track);
+    border: 1px solid var(--border);
+    border-radius: 99px;
+    padding: 3px;
+    gap: 1px;
+  }
+  .theme-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px 7px;
+    border-radius: 99px;
+    color: var(--toggle-icon);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+  }
+  .theme-btn.active {
+    background: var(--toggle-active);
+    color: var(--toggle-icon-active);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  }
+  .theme-btn:hover:not(.active) { color: var(--muted); }
 
   .hero { padding: 72px 0 56px; }
   .hero h1 { font-size: 32px; font-weight: 500; letter-spacing: -0.5px; margin-bottom: 16px; color: var(--text); }
@@ -53,8 +128,8 @@
   .project-card h3 { font-size: 15px; font-weight: 500; margin-bottom: 6px; color: var(--text); }
   .project-card p { font-size: 14px; color: var(--muted); line-height: 1.6; }
   .project-tag { display: inline-block; font-size: 11px; font-weight: 500; background: var(--tag-bg); color: var(--tag-text); padding: 3px 9px; border-radius: 99px; margin-top: 12px; margin-right: 4px; }
-  .project-link { display: inline-block; font-size: 12px; font-weight: 500; color: #fff; background: #534AB7; padding: 5px 13px; border-radius: 99px; margin-top: 12px; text-decoration: none; }
-  .project-link:hover { background: #3f3890; color: #fff; text-decoration: none; }
+  .project-link { display: inline-block; font-size: 12px; font-weight: 500; color: #fff; background: var(--btn-bg); padding: 5px 13px; border-radius: 99px; margin-top: 12px; text-decoration: none; }
+  .project-link:hover { background: var(--btn-hover); color: #fff; text-decoration: none; }
 
   .work-list { display: flex; flex-direction: column; gap: 20px; }
   .work-item { display: flex; gap: 20px; }
@@ -78,10 +153,31 @@
 <nav>
   <div class="inner">
     <span class="logo">Chad Weaver</span>
-    <div class="links">
-      <a href="#projects">Projects</a>
-      <a href="#work">Work</a>
-      <a href="#contact">Contact</a>
+    <div class="right">
+      <div class="links">
+        <a href="#projects">Projects</a>
+        <a href="#work">Work</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="theme-toggle" role="group" aria-label="Color theme">
+        <button class="theme-btn" data-theme-val="light" title="Light mode" aria-label="Light mode">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+          </svg>
+        </button>
+        <button class="theme-btn" data-theme-val="auto" title="Auto (follows system)" aria-label="Auto mode">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="3" width="20" height="14" rx="2"/>
+            <path d="M8 21h8M12 17v4"/>
+          </svg>
+        </button>
+        <button class="theme-btn" data-theme-val="dark" title="Dark mode" aria-label="Dark mode">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+      </div>
     </div>
   </div>
 </nav>
@@ -181,6 +277,41 @@
     <p>© 2026 Chad Weaver · Chicago, IL</p>
   </div>
 </footer>
+
+<script>
+(function () {
+  var STORAGE_KEY = 'theme-pref';
+
+  function getStored() {
+    return localStorage.getItem(STORAGE_KEY) || 'auto';
+  }
+
+  function applyTheme(theme) {
+    var html = document.documentElement;
+    if (theme === 'auto') {
+      html.removeAttribute('data-theme');
+    } else {
+      html.setAttribute('data-theme', theme);
+    }
+    document.querySelectorAll('.theme-btn').forEach(function (btn) {
+      btn.classList.toggle('active', btn.dataset.themeVal === theme);
+    });
+  }
+
+  function setTheme(theme) {
+    localStorage.setItem(STORAGE_KEY, theme);
+    applyTheme(theme);
+  }
+
+  applyTheme(getStored());
+
+  document.querySelectorAll('.theme-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      setTheme(this.dataset.themeVal);
+    });
+  });
+})();
+</script>
 
 </body>
 </html>
