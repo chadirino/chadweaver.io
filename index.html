@@ -71,7 +71,7 @@ nav {
 /* ── SECTION LABEL ── */
 .section-label {
   font-family: var(--fm); font-size: 10px; letter-spacing: 0.14em;
-  text-transform: uppercase; color: var(--c-muted); margin-bottom: 36px;
+  text-transform: uppercase; color: var(--c-medium); margin-bottom: 36px;
   display: flex; align-items: center; gap: 10px;
 }
 .section-label::before {
@@ -82,14 +82,14 @@ nav {
 .tag {
   font-family: var(--fm); font-size: 10px; letter-spacing: 0.06em;
   text-transform: uppercase; padding: 4px 8px;
-  border: 1.5px solid var(--purple); color: var(--purple); border-radius: var(--radius);
+  border: 1.5px solid var(--purple); color: var(--ink); border-radius: var(--radius);
 }
 
 /* ── BACK LINK ── */
 .back-link {
   display: inline-flex; align-items: center; gap: 8px;
   font-family: var(--fm); font-size: 11px; letter-spacing: 0.08em;
-  text-transform: uppercase; text-decoration: none; color: var(--c-dim);
+  text-transform: uppercase; text-decoration: none; color: #555;
   transition: color 0.15s;
 }
 .back-link:hover { color: var(--ink); }
@@ -107,8 +107,8 @@ nav {
   display: flex; justify-content: center; gap: 16px; align-items: center;
   max-width: 1100px; margin: 0 auto;
 }
-.foot-name { font-family: var(--ff); font-size: 13px; color: var(--c-faint); text-transform: uppercase; }
-.foot-year { font-family: var(--ff); font-size: 13px; color: var(--c-faint); text-transform: uppercase; }
+.foot-name { font-family: var(--ff); font-size: 13px; color: var(--c-sub); text-transform: uppercase; }
+.foot-year { font-family: var(--ff); font-size: 13px; color: var(--c-sub); text-transform: uppercase; }
 
 @media (max-width: 700px) {
   .site-footer { padding: 20px 24px; }
@@ -182,7 +182,7 @@ nav {
   }
   .badge-box .lbl {
     font-family: var(--fm); font-size: 10px; letter-spacing: 0.1em;
-    text-transform: uppercase; color: var(--c-dim); margin-top: 4px;
+    text-transform: uppercase; color: var(--purple); margin-top: 4px;
   }
 
   /* TICKER */
@@ -210,6 +210,7 @@ nav {
   }
   .project-card:nth-child(even) { border-right: none; }
   .project-card:nth-last-child(-n+2) { border-bottom: none; }
+  .projects-grid:has(.project-soon) .project-card { border-bottom: none; }
   .project-card::before {
     content: ''; position: absolute; inset: 0; background: var(--purple-light);
     transform: translateY(100%); transition: transform 0.25s cubic-bezier(0.4,0,0.2,1); z-index: 0;
@@ -239,17 +240,17 @@ nav {
   }
   .project-screenshot--placeholder span {
     font-family: var(--fm); font-size: 10px; letter-spacing: 0.1em;
-    text-transform: uppercase; color: var(--c-ghost); background: var(--bg); padding: 4px 10px; border: 1px solid var(--c-ddd);
+    text-transform: uppercase; color: #555; background: var(--bg); padding: 4px 10px; border: 1px solid var(--c-ddd);
   }
   .project-badge {
     font-family: var(--fm); font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase;
-    padding: 4px 8px; background: var(--orange-light); color: var(--orange);
+    padding: 4px 8px; background: var(--orange-light); color: var(--ink);
     border: 1.5px solid var(--orange); border-radius: var(--radius); white-space: nowrap; align-self: center;
   }
   .project-desc { font-size: 14px; color: var(--c-medium); line-height: 1.6; margin-bottom: 16px; }
   .project-tags { display: flex; flex-wrap: wrap; gap: 6px; }
   .project-soon {
-    grid-column: 1 / -1; border-right: none !important; border-bottom: none !important;
+    grid-column: 1 / -1; border-top: var(--border); border-right: none !important; border-bottom: none !important;
     display: flex; align-items: center; gap: 20px; padding: 22px 28px;
     background: var(--ink); color: var(--bg);
   }
@@ -264,14 +265,14 @@ nav {
   }
   .work-item:last-child { border-bottom: none; }
   .work-item:hover { background: var(--orange-light); margin: 0 -16px; padding: 20px 16px; }
-  .work-year { font-family: var(--fm); font-size: 11px; color: var(--c-muted); padding-top: 3px; letter-spacing: 0.04em; }
+  .work-year { font-family: var(--fm); font-size: 11px; color: #666; padding-top: 3px; letter-spacing: 0.04em; }
   .work-role { font-size: 15px; font-weight: 600; letter-spacing: -0.01em; }
-  .work-role em { font-style: normal; color: var(--purple); }
+  .work-role em { font-style: normal; color: var(--ink); }
   .work-desc { font-size: 13px; color: var(--c-sub); margin-top: 3px; line-height: 1.5; }
   .work-footer { margin-top: 20px; }
   .work-more {
     font-family: var(--fm); font-size: 10px; letter-spacing: 0.14em;
-    text-transform: uppercase; color: var(--c-muted); text-decoration: none;
+    text-transform: uppercase; color: #555; text-decoration: none;
     transition: color 0.15s;
   }
   .work-more:hover { color: var(--ink); }
@@ -280,14 +281,9 @@ nav {
   .skills-grid { display: flex; flex-wrap: wrap; gap: 8px; }
   .skill-pill {
     font-size: 13px; font-weight: 500; padding: 8px 14px; border: var(--border);
-    background: var(--bg); cursor: default; transition: background 0.15s, color 0.15s;
+    background: var(--bg); cursor: default;
     border-radius: var(--radius); letter-spacing: -0.01em;
   }
-  .skill-pill:hover { background: var(--ink); color: var(--bg); }
-  .skill-pill.highlight {
-    background: var(--purple-light); border-color: var(--purple); color: var(--purple);
-  }
-  .skill-pill.highlight:hover { background: var(--purple); color: #fff; }
 
   /* CONTACT */
   .contact-row { display: flex; border: var(--border); width: fit-content; }
@@ -340,9 +336,9 @@ nav {
       <strong>Systems thinker. Detail obsessive.</strong> I combine data engineering with civic curiosity to build apps that surface insight, challenge assumptions, and create a more empathetic, sustainable world — one tool at a time.
     </p>
     <div class="hero-actions">
-      <a href="#projects" class="btn-primary">See my projects →</a>
+      <a href="#projects" class="btn-primary">See my projects <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="2.5" y1="6.5" x2="10.5" y2="6.5"/><polyline points="6.5,2.5 10.5,6.5 6.5,10.5"/></svg></a>
       <a href="about.html" class="btn-secondary">About me</a>
-      <a href="Chad_Weaver_Resume.pdf" download class="btn-secondary">↓ Résumé</a>
+      <a href="Chad_Weaver_Resume.pdf" download class="btn-secondary"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6.5" y1="1.5" x2="6.5" y2="8.5"/><polyline points="3.5,5.5 6.5,9 9.5,5.5"/><line x1="1.5" y1="11.5" x2="11.5" y2="11.5"/></svg> Résumé</a>
     </div>
   </div>
   <div class="hero-right">
@@ -352,7 +348,7 @@ nav {
     </div>
     <div class="badge-box" style="background: var(--orange-light);">
       <div class="num" style="color: var(--orange);">5+</div>
-      <div class="lbl">Years in data</div>
+      <div class="lbl" style="color: var(--orange);">Years in data</div>
     </div>
   </div>
 </div>
@@ -460,20 +456,20 @@ nav {
   <section id="skills">
     <div class="section-label reveal">Skills & Tools</div>
     <div class="skills-grid reveal">
-      <span class="skill-pill highlight">SQL</span>
-      <span class="skill-pill highlight">Python</span>
-      <span class="skill-pill highlight">Tableau</span>
+      <span class="skill-pill">SQL</span>
+      <span class="skill-pill">Python</span>
+      <span class="skill-pill">Tableau</span>
       <span class="skill-pill">Looker / LookML</span>
-      <span class="skill-pill highlight">Google BigQuery</span>
+      <span class="skill-pill">Google BigQuery</span>
       <span class="skill-pill">Alteryx</span>
       <span class="skill-pill">ETL / data pipelines</span>
       <span class="skill-pill">Data storytelling</span>
       <span class="skill-pill">Business intelligence</span>
       <span class="skill-pill">Spreadsheets</span>
-      <span class="skill-pill highlight">Civic tech</span>
+      <span class="skill-pill">Civic tech</span>
       <span class="skill-pill">Data analysis</span>
       <span class="skill-pill">Data visualization</span>
-      <span class="skill-pill highlight">Prompt engineering</span>
+      <span class="skill-pill">Prompt engineering</span>
     </div>
   </section>
 
