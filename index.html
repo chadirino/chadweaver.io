@@ -123,7 +123,7 @@ nav {
 <style>
   main { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
   section { padding: 64px 0; border-bottom: var(--border); }
-  section:last-child { border-bottom: none; padding-bottom: 0; }
+  section:last-child { border-bottom: none; }
 
   /* HERO */
   .hero {
@@ -309,6 +309,7 @@ nav {
   .cta-strip {
     background: var(--ink); padding: 40px 48px;
     display: flex; align-items: center; justify-content: space-between;
+    max-width: 1100px; margin: 0 auto;
     border-top: var(--border);
   }
   .cta-text { font-size: 20px; font-weight: 700; color: var(--bg); letter-spacing: -0.02em; }
@@ -507,17 +508,16 @@ nav {
     </div>
   </section>
 
-  <section id="contact">
-  <div class="cta-strip reveal">
-    <div class="cta-text">Want to work together or just say hi? <span>Let's talk.</span></div>
-    <div class="cta-links">
-      <a href="mailto:chadw913@icloud.com" class="cta-btn">Email</a>
-      <a href="https://www.linkedin.com/in/cweaver13/" target="_blank" class="cta-btn">LinkedIn</a>
-      <a href="Chad_Weaver_Resume.pdf" download class="cta-btn"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6.5" y1="1.5" x2="6.5" y2="8.5"/><polyline points="3.5,5.5 6.5,9 9.5,5.5"/><line x1="1.5" y1="11.5" x2="11.5" y2="11.5"/></svg> Résumé</a>
-    </div>
-  </div>
-</section>
 </main>
+
+<div class="cta-strip reveal">
+  <div class="cta-text">Want to work together or just say hi? <span>Let's talk.</span></div>
+  <div class="cta-links">
+    <a href="mailto:chadw913@icloud.com" class="cta-btn">Email</a>
+    <a href="https://www.linkedin.com/in/cweaver13/" target="_blank" class="cta-btn">LinkedIn</a>
+    <a href="Chad_Weaver_Resume.pdf" download class="cta-btn"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6.5" y1="1.5" x2="6.5" y2="8.5"/><polyline points="3.5,5.5 6.5,9 9.5,5.5"/><line x1="1.5" y1="11.5" x2="11.5" y2="11.5"/></svg> Résumé</a>
+  </div>
+</div>
 
 <footer class="site-footer">
   <span class="foot-name">Chad Weaver © 2026</span>
