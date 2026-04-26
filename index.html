@@ -21,6 +21,7 @@
   --orange-text: #9e3620;
   --green: #2d7a4f;
   --green-light: #e6f4ed;
+  --purple-dark: #4a3f63;
   --border: 2px solid var(--ink);
   --radius: 4px;
   --ff: 'Space Grotesk', sans-serif;
@@ -85,7 +86,7 @@ nav {
 .tag {
   font-family: var(--fm); font-size: 10px; letter-spacing: 0.06em;
   text-transform: uppercase; padding: 4px 8px;
-  border: 1.5px solid var(--purple); color: var(--ink);
+  border: 1.5px solid var(--purple); color: var(--purple-dark);
   background: var(--purple-light); border-radius: var(--radius);
 }
 
@@ -127,7 +128,6 @@ nav {
   /* HERO */
   .hero {
     padding: 72px 48px 64px;
-    border-bottom: var(--border);
     display: grid;
     grid-template-columns: 1fr auto;
     align-items: start;
@@ -251,9 +251,21 @@ nav {
     font-family: var(--fm); font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase;
     padding: 4px 8px; background: var(--orange-light); color: var(--orange-text);
     border: 1.5px solid var(--orange); border-radius: var(--radius); white-space: nowrap; align-self: center;
+    display: inline-flex; align-items: center; gap: 5px;
+  }
+  .project-badge::before {
+    content: '×'; font-family: var(--ff); font-size: 12px; line-height: 1; font-weight: 400;
   }
   .project-badge--live {
     background: var(--green-light); color: var(--green); border-color: var(--green);
+  }
+  .project-badge--live::before {
+    content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--green);
+    flex-shrink: 0; animation: live-pulse 1.8s ease-in-out infinite;
+  }
+  @keyframes live-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.35; transform: scale(0.65); }
   }
   .project-desc { font-size: 14px; color: var(--c-medium); line-height: 1.6; margin-bottom: 16px; }
   .project-tags { display: flex; flex-wrap: wrap; gap: 6px; }

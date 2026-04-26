@@ -15,6 +15,8 @@
   --purple-light: #f0edf8;
   --orange: #e8634a;
   --orange-light: #fdeae5;
+  --orange-text: #9e3620;
+  --purple-dark: #4a3f63;
   --border: 2px solid #131212;
   --radius: 4px;
   --ff: 'Space Grotesk', sans-serif;
@@ -71,8 +73,19 @@ nav {
 .tag {
   font-family: var(--fm); font-size: 10px; letter-spacing: 0.06em;
   text-transform: uppercase; padding: 4px 8px;
-  border: 1.5px solid var(--purple); color: var(--ink);
+  border: 1.5px solid var(--purple); color: var(--purple-dark);
   background: var(--purple-light); border-radius: var(--radius);
+}
+
+/* ── STATUS BADGES ── */
+.project-badge {
+  font-family: var(--fm); font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 4px 8px; background: var(--orange-light); color: var(--orange-text);
+  border: 1.5px solid var(--orange); border-radius: var(--radius); white-space: nowrap; align-self: center;
+  display: inline-flex; align-items: center; gap: 5px;
+}
+.project-badge::before {
+  content: '×'; font-family: var(--ff); font-size: 12px; line-height: 1; font-weight: 400;
 }
 
 /* ── BACK LINK ── */
@@ -308,7 +321,7 @@ nav {
     <div class="project-meta">
       <span class="tag">AI</span>
       <span class="tag">Critical thinking</span>
-      <span class="tag">In progress</span>
+      <span class="project-badge">In progress</span>
     </div>
   </div>
 
