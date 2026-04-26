@@ -14,6 +14,30 @@
 - **Skill Pills:** Flex-wrap list. Space Mono font.
 - **Contact Group:** Horizontal bordered group. No gaps; shared borders between buttons.
 
+### Status Pills (`.project-badge`)
+Used in project card headers to communicate project state. Rules:
+- Font: Space Mono, 9px, uppercase, `letter-spacing: 0.08em`
+- Shape: `padding: 4px 8px`, `border-radius: 4px`, `border: 1.5px solid <color>`
+- No fill beyond a light tint; text color must match the border color (or a darker shade to pass WCAG AA 4.5:1)
+- **Variants:**
+  - `EARLY STAGES` — border: `--orange` (`#e8634a`), bg: `--orange-light` (`#fdeae5`), text: `--orange-text` (`#9e3620`)
+  - `LIVE` — add class `project-badge--live`; border: `--green` (`#2d7a4f`), bg: `--green-light` (`#e6f4ed`), text: `--green` (`#2d7a4f`)
+  - `IN DEVELOPMENT` — use base `.project-badge` style (orange/early-stages family) until a dedicated variant is defined
+- **Card header layout:** always group status pill + link arrow together in a `.project-header-right` flex container (`gap: 8px`, `align-items: center`) on the right side of `.project-header`.
+
+### Tag Pills (`.tag`)
+Used for topic/category labels on project cards and detail pages. Rules:
+- Font: Space Mono, 10px, uppercase, `letter-spacing: 0.06em`
+- Shape: `padding: 4px 8px`, `border-radius: 4px`, `border: 1.5px solid --purple`
+- Fill: `background: --purple-light` (`#f0edf8`) — light purple tint
+- Text: `color: --ink` (`#131212`) — ink provides WCAG AA contrast on the purple-light background (purple `#887ba3` alone fails 4.5:1 at 10px)
+- Apply consistently across index.html, civic-compass.html, and argument-evaluator.html
+
+### Project Card Description Text
+- Class: `.project-desc`
+- Color: `--c-medium` (`#555`) — single canonical token across all project cards
+- Do not apply `opacity` at the card level as it shifts the visible text color inconsistently
+
 ## Motion & Interactions
 - **Scroll Reveal:** Use `IntersectionObserver`.
   - Animation: `opacity 0 -> 1`, `translateY 20px -> 0`.
