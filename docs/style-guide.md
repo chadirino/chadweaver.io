@@ -33,6 +33,16 @@ Used for topic/category labels on project cards and detail pages. Rules:
 - Text: `color: --ink` (`#131212`) — ink provides WCAG AA contrast on the purple-light background (purple `#887ba3` alone fails 4.5:1 at 10px)
 - Apply consistently across index.html, civic-compass.html, and argument-evaluator.html
 
+### Final Footer (`.site-footer`)
+- Text uses the exact same typography as section header labels (`.section-label`): Space Mono (`--fm`), 10px, `letter-spacing: 0.14em`, `text-transform: uppercase`, `color: --c-medium` (`#555`).
+- No top border — the footer sits flush below the contact CTA strip with no divider.
+
+### Contact CTA Strip (`.cta-strip`)
+- Dark ink background (`--ink`), full-width, sits above the final footer.
+- Canonical link set: **Email, LinkedIn, Résumé** — GitHub is not included.
+- Buttons use class `.cta-btn`: `padding: 12px 24px`, `border: 2px solid #444`, no gap between buttons (shared borders), hover fills orange.
+- Mobile: stacks vertically (`flex-direction: column`), padding reduces to `32px 24px`.
+
 ### Project Card Description Text
 - Class: `.project-desc`
 - Color: `--c-medium` (`#555`) — single canonical token across all project cards
