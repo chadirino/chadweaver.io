@@ -130,7 +130,7 @@ nav {
 
   .about-eyebrow {
     font-family: var(--fm); font-size: 11px; letter-spacing: 0.12em;
-    text-transform: uppercase; color: var(--ink); margin-bottom: 20px;
+    text-transform: uppercase; color: var(--orange); margin-bottom: 20px;
   }
 
   .about-name {
@@ -193,10 +193,10 @@ nav {
   .value-card:last-child { border-right: none; }
 
   .value-icon {
-    width: 36px; height: 36px; border: var(--border);
+    width: 44px; height: 44px;
     display: flex; align-items: center; justify-content: center;
-    margin-bottom: 14px; background: var(--purple-light);
-    font-size: 16px;
+    margin-bottom: 14px; background: #1a1a1a;
+    border-radius: 10px;
   }
 
   .value-title {
@@ -323,17 +323,43 @@ nav {
     <div class="section-label reveal">What I care about</div>
     <div class="values-grid reveal">
       <div class="value-card">
-        <div class="value-icon">◈</div>
+        <div class="value-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10.1 2.18a9.93 9.93 0 0 1 3.8 0"/>
+            <path d="M17.6 3.71a9.95 9.95 0 0 1 2.69 2.7"/>
+            <path d="M21.82 10.1a9.93 9.93 0 0 1 0 3.8"/>
+            <path d="M20.29 17.6a9.95 9.95 0 0 1-2.7 2.69"/>
+            <path d="M13.9 21.82a9.94 9.94 0 0 1-3.8 0"/>
+            <path d="M6.4 20.29a9.95 9.95 0 0 1-2.69-2.7"/>
+            <path d="M2.18 13.9a9.93 9.93 0 0 1 0-3.8"/>
+            <path d="M3.71 6.4a9.95 9.95 0 0 1 2.7-2.69"/>
+            <circle cx="12" cy="12" r="1"/>
+          </svg>
+        </div>
         <div class="value-title">Systems thinking</div>
         <div class="value-desc">I look for root causes, feedback loops, and second-order effects. Good analysis means understanding the whole system, not just the surface metric.</div>
       </div>
       <div class="value-card">
-        <div class="value-icon">◎</div>
+        <div class="value-icon">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 13 7.26 A 7 7 0 0 1 13 18.74 A 7 7 0 0 0 13 7.26 Z" fill="rgba(255,255,255,0.18)"/>
+            <circle cx="9" cy="13" r="7" stroke="white" stroke-width="1.5"/>
+            <circle cx="17" cy="13" r="7" stroke="white" stroke-width="1.5"/>
+          </svg>
+        </div>
         <div class="value-title">Empathy in design</div>
         <div class="value-desc">Every tool I build is for real people making real decisions. I care deeply about how products feel to use — not just whether they technically work.</div>
       </div>
       <div class="value-card">
-        <div class="value-icon">◇</div>
+        <div class="value-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M3 7V5a2 2 0 0 1 2-2h2"/>
+            <path d="M17 3h2a2 2 0 0 1 2 2v2"/>
+            <path d="M21 17v2a2 2 0 0 1-2 2h-2"/>
+            <path d="M7 21H5a2 2 0 0 1-2-2v-2"/>
+          </svg>
+        </div>
         <div class="value-title">Epistemic clarity</div>
         <div class="value-desc">I'm fascinated by how people form beliefs and how bad information spreads. I want to build tools that help people reason better — together.</div>
       </div>
