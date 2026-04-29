@@ -8,20 +8,19 @@ Personal portfolio website for **Chad Weaver** — a Data Analyst and Civic Tech
 ---
 
 ## 🛠 Tech Stack
-- **Framework:** Next.js (App Router)
-- **Styling:** Tailwind CSS (Custom Design System)
-- **Icons:** Lucide React
-- **Animations:** Framer Motion / Intersection Observer
-- **Deployment:** Vercel
+- **Framework:** None — plain HTML, CSS, and JavaScript
+- **Styling:** Vanilla CSS with custom properties (mobile-first)
+- **Icons:** Lucide (SVG, inlined)
+- **Animations:** Intersection Observer API
+- **Deployment:** GitHub Pages
 
 ---
 
 ## 📖 Project Documentation
 To keep development efficient and maintain high design fidelity, the technical specifications are split into the following references:
 
-- **[Site Map & Routing](./docs/site-map.md):** Page architecture, external links, and asset locations.
-- **[Style Guide](./docs/style-guide.md):** Detailed interaction logic, spacing, and responsive behaviors.
-- **[CLAUDE.md](./CLAUDE.md):** Active design tokens and AI workflow instructions for development.
+- **[Style Guide](./docs/style-guide.md):** Colors, typography, spacing, and responsive behaviors.
+- **[CLAUDE.md](./CLAUDE.md):** Conventions and AI workflow instructions for development.
 
 ---
 
@@ -29,4 +28,10 @@ To keep development efficient and maintain high design fidelity, the technical s
 
 1. **Clone the repo:**
    ```bash
-   git clone [https://github.com/chadirino/chadweaver.io.git](https://github.com/chadirino/chadweaver.io.git)
+   git clone https://github.com/chadirino/chadweaver.io.git
+   ```
+
+2. **Open locally:** No build step required. Open any `.html` file directly in a browser, or serve with any static file server:
+   ```bash
+   npx serve .
+   ```
