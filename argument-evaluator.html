@@ -4,316 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Argument Evaluator — Chad Weaver</title>
+<meta name="description" content="A tool for building and stress-testing arguments with AI-powered fallacy detection.">
 <meta property="og:title" content="Argument Evaluator — Chad Weaver">
 <meta property="og:description" content="A tool for building and stress-testing arguments with AI-powered fallacy detection.">
-<style>@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
-
-:root {
-  --bg: #f9f6f0;
-  --ink: #131212;
-  --purple: #887ba3;
-  --purple-light: #f0edf8;
-  --orange: #e8634a;
-  --orange-light: #fdeae5;
-  --orange-text: #9e3620;
-  --purple-dark: #4a3f63;
-  --border: 2px solid #131212;
-  --radius: 4px;
-  --ff: 'Space Grotesk', sans-serif;
-  --fm: 'Space Mono', monospace;
-}
-
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body {
-  font-family: var(--ff);
-  background: var(--bg);
-  color: var(--ink);
-  font-size: 16px;
-  line-height: 1.5;
-  overflow-x: hidden;
-}
-
-/* ── NAV ── */
-nav {
-  position: sticky; top: 0; z-index: 100;
-  background: var(--bg);
-  border-bottom: var(--border);
-  display: flex; align-items: stretch; height: 52px;
-}
-.nav-logo {
-  font-weight: 700; font-size: 15px; letter-spacing: -0.02em;
-  padding: 0 24px; display: flex; align-items: center;
-  border-right: var(--border); text-decoration: none; color: var(--ink); white-space: nowrap;
-}
-.nav-logo span {
-  display: inline-block; width: 8px; height: 8px;
-  border-radius: 50%; background: var(--orange); margin-left: 6px; position: relative; top: -1px;
-}
-.nav-links { display: flex; align-items: stretch; list-style: none; margin-left: auto; }
-.nav-links li a {
-  display: flex; align-items: center; padding: 0 20px;
-  font-size: 14px; font-weight: 500; text-decoration: none; color: var(--ink);
-  border-left: var(--border); transition: background 0.15s, color 0.15s; letter-spacing: 0.02em;
-}
-.nav-links li a:hover { background: var(--ink); color: var(--bg); }
-.nav-links li a.active { background: var(--orange); color: #fff; }
-
-/* ── SECTION LABEL ── */
-.section-label {
-  font-family: var(--fm); font-size: 10px; letter-spacing: 0.14em;
-  text-transform: uppercase; color: #555; margin-bottom: 36px;
-  display: flex; align-items: center; gap: 10px;
-}
-.section-label::before {
-  content: ''; display: inline-block; width: 24px; height: 2px; background: var(--orange);
-}
-
-/* ── TAGS ── */
-.tag {
-  font-family: var(--fm); font-size: 10px; letter-spacing: 0.06em;
-  text-transform: uppercase; padding: 4px 8px;
-  border: 1.5px solid var(--purple); color: var(--purple-dark);
-  background: var(--purple-light); border-radius: var(--radius);
-}
-
-/* ── STATUS BADGES ── */
-.project-badge {
-  font-family: var(--fm); font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase;
-  padding: 4px 8px; background: var(--orange-light); color: var(--orange-text);
-  border: 1.5px solid var(--orange); border-radius: var(--radius); white-space: nowrap; align-self: center;
-  display: inline-flex; align-items: center; gap: 5px;
-}
-.project-badge::before {
-  content: '×'; font-family: var(--ff); font-size: 12px; line-height: 1; font-weight: 400;
-}
-
-/* ── BACK LINK ── */
-.back-link {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-family: var(--fm); font-size: 11px; letter-spacing: 0.08em;
-  text-transform: uppercase; text-decoration: none; color: #555;
-  transition: color 0.15s;
-}
-.back-link:hover { color: var(--ink); }
-
-/* ── SCROLL FADE IN ── */
-.reveal {
-  opacity: 0; transform: translateY(20px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-.reveal.visible { opacity: 1; transform: translateY(0); }
-
-/* ── FOOTER ── */
-.site-footer {
-  border-top: var(--border); padding: 24px 48px;
-  display: flex; justify-content: center; gap: 16px; align-items: center;
-  max-width: 1100px; margin: 0 auto;
-}
-.foot-name { font-family: var(--ff); font-size: 13px; color: #666; text-transform: uppercase; }
-.foot-year { font-family: var(--ff); font-size: 13px; color: #666; text-transform: uppercase; }
-
-@media (max-width: 700px) {
-  .site-footer { padding: 20px 24px; }
-  .nav-links li:not(:last-child) a { display: none; }
-}
-</style>
-<style>
-  main { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
-  section { padding: 64px 0; border-bottom: var(--border); }
-  section:last-child { border-bottom: none; }
-
-  .project-hero {
-    padding: 48px 48px 0;
-    max-width: 1100px; margin: 0 auto;
-    border-bottom: var(--border);
-  }
-
-  .project-hero-top {
-    display: flex; align-items: center; justify-content: space-between;
-    margin-bottom: 40px;
-  }
-
-  .project-meta { display: flex; align-items: center; gap: 12px; }
-
-  .project-hero-title {
-    font-size: clamp(36px, 5vw, 72px); font-weight: 700;
-    line-height: 1.0; letter-spacing: -0.03em; margin-bottom: 20px;
-  }
-  .project-hero-title span { color: var(--purple); }
-
-  .project-tagline {
-    font-size: 19px; color: #555; line-height: 1.65; max-width: 600px; margin-bottom: 40px;
-  }
-
-  /* PLACEHOLDER STRIP */
-  .placeholder-strip {
-    margin-top: 40px; border-top: var(--border);
-    display: grid; grid-template-columns: 1fr 1fr; height: 360px;
-  }
-
-  .placeholder-main {
-    border-right: var(--border);
-    background: repeating-linear-gradient(
-      45deg, #e8e3da 0px, #e8e3da 1px, transparent 1px, transparent 14px
-    );
-    display: flex; align-items: center; justify-content: center;
-    flex-direction: column; gap: 12px;
-  }
-
-  .placeholder-main .ph-icon {
-    width: 56px; height: 56px; border: var(--border);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 24px; background: var(--bg);
-  }
-
-  .placeholder-main span {
-    font-family: var(--fm); font-size: 11px; letter-spacing: 0.1em;
-    text-transform: uppercase; color: #555;
-  }
-
-  .placeholder-side {
-    background: var(--ink); padding: 40px;
-    display: flex; flex-direction: column; justify-content: center; gap: 20px;
-  }
-
-  .placeholder-side .coming-label {
-    font-family: var(--fm); font-size: 11px; letter-spacing: 0.12em;
-    text-transform: uppercase; color: var(--orange);
-  }
-
-  .placeholder-side .coming-title {
-    font-size: 28px; font-weight: 700; color: #fff; letter-spacing: -0.02em;
-    line-height: 1.2;
-  }
-
-  .placeholder-side .coming-desc {
-    font-size: 14px; color: #888; line-height: 1.6;
-  }
-
-  /* DETAIL GRID */
-  .detail-grid {
-    display: grid; grid-template-columns: 2fr 1fr; gap: 64px;
-  }
-
-  .detail-body h2 {
-    font-size: 22px; font-weight: 700; letter-spacing: -0.02em;
-    margin-bottom: 14px; margin-top: 36px;
-  }
-  .detail-body h2:first-child { margin-top: 0; }
-  .detail-body p { font-size: 15px; color: #444; line-height: 1.75; margin-bottom: 14px; }
-  .detail-body p strong { color: var(--ink); font-weight: 600; }
-
-  /* FEATURES PREVIEW */
-  .features-list { margin-top: 24px; display: flex; flex-direction: column; gap: 12px; }
-
-  .feature-item {
-    display: flex; align-items: flex-start; gap: 14px;
-    padding: 16px; border: var(--border);
-  }
-
-  .feature-num {
-    font-family: var(--fm); font-size: 11px; letter-spacing: 0.06em;
-    color: var(--ink); font-weight: 700; flex-shrink: 0; padding-top: 2px;
-  }
-
-  .feature-text { font-size: 14px; color: #444; line-height: 1.5; }
-  .feature-text strong { color: var(--ink); font-weight: 600; }
-
-  /* SIDEBAR */
-  .sidebar-card {
-    border: var(--border); padding: 24px; margin-bottom: 16px;
-  }
-
-  .sidebar-label {
-    font-family: var(--fm); font-size: 10px; letter-spacing: 0.1em;
-    text-transform: uppercase; color: #555; margin-bottom: 12px;
-  }
-
-  .sidebar-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-
-  .tech-item {
-    font-size: 13px; font-weight: 500; padding: 6px 10px;
-    border: var(--border); border-radius: var(--radius); background: var(--bg);
-  }
-
-  .notify-form {
-    display: flex; flex-direction: column; gap: 8px;
-  }
-
-  .notify-form input {
-    padding: 10px 12px; border: var(--border); font-family: var(--ff);
-    font-size: 13px; background: var(--bg); outline: none; width: 100%;
-  }
-  .notify-form input:focus { border-color: var(--orange); }
-
-  .notify-form button {
-    padding: 10px 16px; background: var(--ink); color: var(--bg);
-    border: var(--border); font-family: var(--ff); font-size: 13px;
-    font-weight: 600; cursor: pointer; transition: background 0.15s;
-    letter-spacing: 0.01em;
-  }
-  .notify-form button:hover { background: var(--orange); border-color: var(--orange); }
-
-  /* NEXT PROJECT */
-  .next-project {
-    max-width: 1100px; margin: 0 auto;
-    border-top: var(--border); padding: 0;
-    display: grid; grid-template-columns: 1fr 1fr;
-  }
-
-  .next-col {
-    padding: 40px 48px; display: flex; flex-direction: column; justify-content: space-between;
-  }
-  .next-col:first-child { border-right: var(--border); }
-
-  .next-eyebrow {
-    font-family: var(--fm); font-size: 10px; letter-spacing: 0.12em;
-    text-transform: uppercase; color: var(--orange); margin-bottom: 12px;
-  }
-
-  .next-title {
-    font-size: 24px; font-weight: 700; letter-spacing: -0.02em;
-    text-decoration: none; color: var(--ink); display: block; margin-bottom: 16px;
-    transition: color 0.15s;
-  }
-  .next-title:hover { color: var(--orange); }
-
-  .next-arrow {
-    width: 40px; height: 40px; border: var(--border);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 18px; text-decoration: none; color: var(--ink);
-    transition: background 0.15s, color 0.15s;
-  }
-  .next-arrow:hover { background: var(--orange); border-color: var(--orange); color: #fff; }
-
-  @media (max-width: 700px) {
-    .project-hero { padding: 32px 24px 0; }
-    .project-hero { padding: 32px 24px 0; }
-    .project-hero-top { flex-wrap: wrap; gap: 16px; }
-    .tag { white-space: nowrap; }
-    main { padding: 0 24px; }
-    .placeholder-strip { grid-template-columns: 1fr; height: auto; }
-    .placeholder-main { height: 200px; border-right: none; border-bottom: var(--border); }
-    .detail-grid { grid-template-columns: 1fr; gap: 32px; }
-    .next-project { grid-template-columns: 1fr; }
-    .next-col:first-child { border-right: none; border-bottom: var(--border); }
-    .next-col { padding: 28px 24px; }
-  }
-</style>
-
-<script>window.addEventListener('error', e => { if (e.message && e.message.includes('ResizeObserver')) e.stopImmediatePropagation(); });</script>
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/argument-evaluator.css">
 </head>
 <body>
 
-<nav>
-  <a href="index.html" class="nav-logo">Chad Weaver<span></span></a>
-  <ul class="nav-links">
-    <li><a href="index.html#projects" class="nav-link active">Projects</a></li>
-    <li><a href="index.html#work" class="nav-link">Work</a></li>
-    <li><a href="about.html" class="nav-link">About</a></li>
-  </ul>
-</nav>
+<nav></nav>
 
 <div class="project-hero">
   <div class="project-hero-top reveal">
@@ -369,7 +68,7 @@ nav {
           </div>
           <div class="feature-item">
             <div class="feature-num">04</div>
-            <div class="feature-text"><strong>Share & compare</strong> — share your argument map with others and see how they evaluate the same question.</div>
+            <div class="feature-text"><strong>Share &amp; compare</strong> — share your argument map with others and see how they evaluate the same question.</div>
           </div>
         </div>
       </div>
@@ -393,11 +92,11 @@ nav {
         </div>
         <div class="sidebar-card">
           <div class="sidebar-label">Get notified</div>
-          <form class="notify-form" onsubmit="handleNotify(event)">
-            <input type="email" id="notify-email" placeholder="your@email.com" required>
+          <form class="notify-form">
+            <input type="email" id="notify-email" placeholder="your@email.com" required aria-label="Email address">
             <button type="submit">Notify me →</button>
           </form>
-          <p id="notify-confirm" style="display:none; font-size:13px; color:#1d6638; margin-top:8px; font-family:var(--fm); font-size:11px; letter-spacing:0.06em;">✓ You're on the list!</p>
+          <p id="notify-confirm" class="notify-confirm" hidden>✓ You're on the list!</p>
         </div>
       </div>
     </div>
@@ -410,40 +109,20 @@ nav {
       <div class="next-eyebrow">Previous project</div>
       <a href="civic-compass.html" class="next-title">Civic Compass</a>
     </div>
-    <a href="civic-compass.html" class="next-arrow"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="10.5" y1="6.5" x2="2.5" y2="6.5"/><polyline points="6.5,2.5 2.5,6.5 6.5,10.5"/></svg></a>
+    <a href="civic-compass.html" class="next-arrow" aria-label="Go to Civic Compass"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="10.5" y1="6.5" x2="2.5" y2="6.5"/><polyline points="6.5,2.5 2.5,6.5 6.5,10.5"/></svg></a>
   </div>
   <div class="next-col">
     <div>
       <div class="next-eyebrow">Back to</div>
       <a href="index.html" class="next-title">All projects</a>
     </div>
-    <a href="index.html" class="next-arrow"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6.5" y1="10.5" x2="6.5" y2="2.5"/><polyline points="2.5,6.5 6.5,2.5 10.5,6.5"/></svg></a>
+    <a href="index.html" class="next-arrow" aria-label="Back to all projects"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6.5" y1="10.5" x2="6.5" y2="2.5"/><polyline points="2.5,6.5 6.5,2.5 10.5,6.5"/></svg></a>
   </div>
 </div>
 
-<footer class="site-footer">
-  <span class="foot-name">Chad Weaver © 2026</span>
-  <span class="foot-year">Chicago, IL</span>
-</footer>
+<footer class="site-footer"></footer>
 
-<script>
-  const revealEls = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach((e, i) => {
-      if (e.isIntersecting) {
-        setTimeout(() => e.target.classList.add('visible'), i * 80);
-        observer.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.1 });
-  revealEls.forEach(el => observer.observe(el));
-
-  function handleNotify(e) {
-    e.preventDefault();
-    document.getElementById('notify-email').value = '';
-    document.getElementById('notify-confirm').style.display = 'block';
-  }
-</script>
-
+<script defer src="js/main.js"></script>
+<script defer src="js/argument-evaluator.js"></script>
 </body>
 </html>

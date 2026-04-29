@@ -1,0 +1,108 @@
+/* HERO — mobile-first: photo thumbnail left, name right, bio below */
+.about-hero {
+  padding: 48px 24px;
+  border-bottom: var(--border);
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-areas: "photo byline" "bio bio";
+  grid-template-rows: auto auto;
+  column-gap: 16px;
+  row-gap: 24px;
+  align-items: start;
+}
+.about-byline-col { grid-area: byline; }
+.about-bio-col    { grid-area: bio; }
+.about-photo-col  { grid-area: photo; align-self: center; }
+
+.about-eyebrow {
+  font-family: var(--fm); font-size: 11px; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--orange); margin-bottom: 8px;
+}
+.about-name {
+  font-size: clamp(24px, 7vw, 36px); font-weight: 700;
+  line-height: 1.05; letter-spacing: -0.03em; margin-bottom: 0;
+}
+.about-name span { color: var(--purple); }
+.about-bio { font-size: 17px; line-height: 1.75; color: #444; max-width: 540px; }
+.about-bio p + p { margin-top: 16px; }
+.about-bio strong { color: var(--ink); font-weight: 600; }
+
+.photo-box {
+  width: 72px; height: 72px;
+  border-radius: 50%;
+  border: var(--border);
+  overflow: hidden;
+}
+.photo-box img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+
+/* VALUES */
+.values-grid { display: grid; grid-template-columns: 1fr; border: var(--border); }
+.value-card { padding: 28px; border-bottom: var(--border); }
+.value-card:last-child { border-bottom: none; }
+.value-icon {
+  width: 44px; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 14px; background: #1a1a1a;
+  border-radius: 10px;
+}
+.value-title { font-size: 15px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 8px; }
+.value-desc { font-size: 13px; color: var(--c-sub); line-height: 1.6; }
+
+/* RIGHT NOW */
+.now-grid { display: grid; grid-template-columns: 1fr; border: var(--border); }
+.now-item { padding: 24px 28px; border-bottom: var(--border); }
+.now-item:last-child { border-bottom: none; }
+.now-label {
+  font-family: var(--fm); font-size: 10px; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--orange); margin-bottom: 8px;
+}
+.now-text { font-size: 14px; line-height: 1.6; color: #444; }
+.now-text strong { color: var(--ink); font-weight: 600; }
+
+/* Photo placeholder elements (shown when no image is loaded) */
+.photo-box-label {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 8px;
+}
+.photo-box-label .photo-icon {
+  width: 48px; height: 48px; border-radius: 50%;
+  border: var(--border); background: var(--purple-light);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px;
+}
+.photo-box-label span {
+  font-family: var(--fm); font-size: 10px; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--c-medium);
+}
+
+@media (min-width: 700px) {
+  .about-hero {
+    padding: 72px 48px 64px;
+    grid-template-columns: 1fr 280px;
+    grid-template-areas: "byline photo" "bio photo";
+    grid-template-rows: auto 1fr;
+    column-gap: 64px;
+    row-gap: 0;
+  }
+  .about-photo-col { align-self: start; }
+  .about-eyebrow { margin-bottom: 20px; }
+  .about-name { font-size: clamp(40px, 5vw, 68px); margin-bottom: 24px; }
+  .photo-box {
+    width: auto; height: auto;
+    border-radius: 0;
+    aspect-ratio: 3/4;
+    position: relative;
+    background: repeating-linear-gradient(45deg, var(--c-line) 0px, var(--c-line) 1px, transparent 1px, transparent 14px);
+  }
+  .photo-box img { object-position: center; }
+  .values-grid { grid-template-columns: repeat(3, 1fr); }
+  .value-card { border-right: var(--border); border-bottom: none; }
+  .value-card:last-child { border-right: none; }
+  .now-grid { grid-template-columns: repeat(2, 1fr); }
+  .now-item { border-right: var(--border); border-bottom: var(--border); }
+  .now-item:nth-child(even) { border-right: none; }
+  .now-item:nth-last-child(-n+2) { border-bottom: none; }
+}

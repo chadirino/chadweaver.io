@@ -3,356 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chad Weaver — Data Analyst & Civic Tech Builder</title>
+<title>Chad Weaver — Data Analyst &amp; Civic Tech Builder</title>
 <meta name="description" content="Chad Weaver is a data analyst and civic tech builder based in Chicago, IL. Building tools that make people think.">
 <meta property="og:title" content="Chad Weaver">
-<meta property="og:description" content="Data analyst & civic tech builder based in Chicago, IL. Building tools that make people think.">
+<meta property="og:description" content="Data analyst &amp; civic tech builder based in Chicago, IL. Building tools that make people think.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://chadweaver.io">
-<style>@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
-
-:root {
-  --bg: #f9f6f0;
-  --ink: #131212;
-  --purple: #887ba3;
-  --purple-light: #f0edf8;
-  --orange: #e8634a;
-  --orange-light: #fdeae5;
-  --orange-text: #9e3620;
-  --green: #2d7a4f;
-  --green-light: #e6f4ed;
-  --purple-dark: #4a3f63;
-  --border: 2px solid var(--ink);
-  --radius: 4px;
-  --ff: 'Space Grotesk', sans-serif;
-  --fm: 'Space Mono', monospace;
-  --c-medium: #555;
-  --c-sub: #666;
-  --c-muted: #999;
-  --c-dim: #888;
-  --c-faint: #aaa;
-  --c-ghost: #bbb;
-  --c-line: #e8e3da;
-  --c-ddd: #ddd;
-}
-
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body {
-  font-family: var(--ff);
-  background: var(--bg);
-  color: var(--ink);
-  font-size: 16px;
-  line-height: 1.5;
-  overflow-x: hidden;
-}
-
-/* ── NAV ── */
-nav {
-  position: sticky; top: 0; z-index: 100;
-  background: var(--bg);
-  border-bottom: var(--border);
-  display: flex; align-items: stretch; height: 52px;
-}
-.nav-logo {
-  font-weight: 700; font-size: 15px; letter-spacing: -0.02em;
-  padding: 0 24px; display: flex; align-items: center;
-  border-right: var(--border); text-decoration: none; color: var(--ink); white-space: nowrap;
-}
-.nav-logo span {
-  display: inline-block; width: 8px; height: 8px;
-  border-radius: 50%; background: var(--orange); margin-left: 6px; position: relative; top: -1px;
-}
-.nav-links { display: flex; align-items: stretch; list-style: none; margin-left: auto; }
-.nav-links li a {
-  display: flex; align-items: center; padding: 0 20px;
-  font-size: 14px; font-weight: 500; text-decoration: none; color: var(--ink);
-  border-left: var(--border); transition: background 0.15s, color 0.15s; letter-spacing: 0.02em;
-}
-.nav-links li a:hover { background: var(--ink); color: var(--bg); }
-.nav-links li a.active { background: var(--orange); color: #fff; }
-
-/* ── SECTION LABEL ── */
-.section-label {
-  font-family: var(--fm); font-size: 10px; letter-spacing: 0.14em;
-  text-transform: uppercase; color: var(--c-medium); margin-bottom: 36px;
-  display: flex; align-items: center; gap: 10px;
-}
-.section-label::before {
-  content: ''; display: inline-block; width: 24px; height: 2px; background: var(--orange);
-}
-
-/* ── TAGS ── */
-.tag {
-  font-family: var(--fm); font-size: 10px; letter-spacing: 0.06em;
-  text-transform: uppercase; padding: 4px 8px;
-  border: 1.5px solid var(--purple); color: var(--purple-dark);
-  background: var(--purple-light); border-radius: var(--radius);
-}
-
-/* ── BACK LINK ── */
-.back-link {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-family: var(--fm); font-size: 11px; letter-spacing: 0.08em;
-  text-transform: uppercase; text-decoration: none; color: #555;
-  transition: color 0.15s;
-}
-.back-link:hover { color: var(--ink); }
-
-/* ── SCROLL FADE IN ── */
-.reveal {
-  opacity: 0; transform: translateY(20px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-.reveal.visible { opacity: 1; transform: translateY(0); }
-
-/* ── FOOTER ── */
-.site-footer {
-  padding: 24px 48px;
-  display: flex; justify-content: center; gap: 16px; align-items: center;
-  max-width: 1100px; margin: 0 auto;
-}
-.foot-name { font-family: var(--fm); font-size: 10px; letter-spacing: 0.14em; color: var(--c-medium); text-transform: uppercase; }
-.foot-year { font-family: var(--fm); font-size: 10px; letter-spacing: 0.14em; color: var(--c-medium); text-transform: uppercase; }
-
-@media (max-width: 700px) {
-  .site-footer { padding: 20px 24px; }
-  .nav-links li:not(:last-child) a { display: none; }
-}
-</style>
-<style>
-  main { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
-  section { padding: 64px 0; border-bottom: var(--border); }
-  section:last-child { border-bottom: none; }
-
-  /* HERO */
-  .hero {
-    padding: 72px 48px 64px;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: start;
-    gap: 48px;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-  .hero-eyebrow {
-    font-family: var(--fm); font-size: 11px; letter-spacing: 0.12em;
-    text-transform: uppercase; color: var(--orange); margin-bottom: 20px;
-  }
-  .hero-title {
-    font-size: clamp(36px, 5vw, 60px); font-weight: 700;
-    line-height: 1.08; letter-spacing: -0.03em; max-width: 680px;
-  }
-  .hero-title .underline {
-    position: relative; display: inline-block; color: var(--purple);
-  }
-  .hero-title .underline::after {
-    content: ''; position: absolute; bottom: 2px; left: 0; right: 0;
-    height: 4px; background: var(--orange); border-radius: 2px;
-  }
-  .hero-bio {
-    margin-top: 20px; font-size: 16px; color: var(--c-medium);
-    max-width: 500px; line-height: 1.7;
-  }
-  .hero-bio strong { color: var(--ink); font-weight: 600; }
-  .hero-actions {
-    display: flex; gap: 10px; margin-top: 28px; flex-wrap: wrap;
-  }
-  .btn-primary {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: var(--ink); color: var(--bg);
-    padding: 12px 20px; font-size: 14px; font-weight: 600;
-    text-decoration: none; border: var(--border);
-    transition: background 0.15s, color 0.15s; letter-spacing: 0.01em;
-  }
-  .btn-primary:hover { background: var(--orange); border-color: var(--orange); }
-  .btn-secondary {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: transparent; color: var(--ink);
-    padding: 12px 20px; font-size: 14px; font-weight: 600;
-    text-decoration: none; border: var(--border);
-    transition: background 0.15s, color 0.15s; letter-spacing: 0.01em;
-  }
-  .btn-secondary:hover { background: var(--purple-light); border-color: var(--purple); color: var(--purple); }
-
-  .hero-right { display: flex; flex-direction: column; gap: 10px; }
-  .badge-box {
-    border: var(--border); padding: 16px 20px; text-align: center;
-    background: var(--purple-light); min-width: 130px;
-  }
-  .badge-box .num {
-    font-size: 32px; font-weight: 700; letter-spacing: -0.04em;
-    color: var(--purple); line-height: 1;
-  }
-  .badge-box .lbl {
-    font-family: var(--fm); font-size: 10px; letter-spacing: 0.1em;
-    text-transform: uppercase; color: var(--purple); margin-top: 4px;
-  }
-
-  /* TICKER */
-  .ticker-wrap {
-    border-bottom: var(--border); overflow: hidden;
-    background: var(--ink); padding: 12px 0; user-select: none;
-  }
-  .ticker-track {
-    display: flex; animation: ticker 28s linear infinite; width: max-content;
-  }
-  .ticker-track:hover { animation-play-state: paused; }
-  .ticker-item {
-    font-family: var(--fm); font-size: 12px; letter-spacing: 0.08em;
-    color: var(--bg); padding: 0 28px; text-transform: uppercase;
-    white-space: nowrap; display: flex; align-items: center; gap: 12px;
-  }
-  .ticker-item::after { content: '✦'; color: var(--orange); font-size: 10px; }
-  @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-
-  /* PROJECTS */
-  .projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); border: var(--border); }
-  .project-card {
-    border-right: var(--border); border-bottom: var(--border);
-    padding: 28px; cursor: pointer; position: relative; overflow: hidden;
-  }
-  .project-card:nth-child(even) { border-right: none; }
-  .project-card:nth-last-child(-n+2) { border-bottom: none; }
-  .projects-grid:has(.project-soon) .project-card { border-bottom: none; }
-  .project-card::before {
-    content: ''; position: absolute; inset: 0; background: var(--purple-light);
-    transform: translateY(100%); transition: transform 0.25s cubic-bezier(0.4,0,0.2,1); z-index: 0;
-  }
-  .project-card:hover::before { transform: translateY(0); }
-  .project-card > * { position: relative; z-index: 1; }
-  .project-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 12px; }
-  .project-name { font-size: 19px; font-weight: 700; letter-spacing: -0.02em; }
-  .project-arrow {
-    width: 32px; height: 32px; border: var(--border);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 16px; flex-shrink: 0; transition: background 0.15s, color 0.15s;
-    text-decoration: none; color: var(--ink);
-  }
-  .project-card:hover .project-arrow { background: var(--orange); border-color: var(--orange); color: #fff; }
-  .project-screenshot {
-    width: 100%; height: 170px; overflow: hidden; border: var(--border); margin-bottom: 16px;
-  }
-  .project-screenshot img {
-    width: 100%; height: 100%; object-fit: cover; object-position: top;
-    display: block; transition: transform 0.4s ease;
-  }
-  .project-card:hover .project-screenshot img { transform: scale(1.04); }
-  .project-screenshot--placeholder {
-    background: repeating-linear-gradient(45deg, var(--c-line) 0px, var(--c-line) 1px, transparent 1px, transparent 12px);
-    display: flex; align-items: center; justify-content: center;
-  }
-  .project-screenshot--placeholder span {
-    font-family: var(--fm); font-size: 10px; letter-spacing: 0.1em;
-    text-transform: uppercase; color: #555; background: var(--bg); padding: 4px 10px; border: 1px solid var(--c-ddd);
-  }
-  .project-header-right { display: flex; align-items: center; gap: 8px; }
-  .project-badge {
-    font-family: var(--fm); font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase;
-    padding: 4px 8px; background: var(--orange-light); color: var(--orange-text);
-    border: 1.5px solid var(--orange); border-radius: var(--radius); white-space: nowrap; align-self: center;
-    display: inline-flex; align-items: center; gap: 5px;
-  }
-  .project-badge::before {
-    content: '×'; font-family: var(--ff); font-size: 12px; line-height: 1; font-weight: 400;
-  }
-  .project-badge--live {
-    background: var(--green-light); color: var(--green); border-color: var(--green);
-  }
-  .project-badge--live::before {
-    content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--green);
-    flex-shrink: 0; animation: live-pulse 1.8s ease-in-out infinite;
-  }
-  @keyframes live-pulse {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.35; transform: scale(0.65); }
-  }
-  .project-desc { font-size: 14px; color: var(--c-medium); line-height: 1.6; margin-bottom: 16px; }
-  .project-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-  .project-soon {
-    grid-column: 1 / -1; border-top: var(--border); border-right: none !important; border-bottom: none !important;
-    display: flex; align-items: center; gap: 20px; padding: 22px 28px;
-    background: var(--ink); color: var(--bg);
-  }
-  .project-soon .soon-label { font-family: var(--fm); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--orange); }
-  .project-soon .soon-text { font-size: 13px; color: var(--c-faint); margin-top: 2px; }
-
-  /* WORK */
-  .work-item {
-    display: grid; grid-template-columns: 120px 1fr; gap: 0 24px;
-    padding: 20px 0; border-bottom: 1px solid var(--c-line);
-    transition: background 0.15s, padding 0.15s, margin 0.15s;
-  }
-  .work-item:last-child { border-bottom: none; }
-  .work-item:hover { background: var(--orange-light); margin: 0 -16px; padding: 20px 16px; }
-  .work-year { font-family: var(--fm); font-size: 11px; color: #666; padding-top: 3px; letter-spacing: 0.04em; }
-  .work-role { font-size: 15px; font-weight: 600; letter-spacing: -0.01em; }
-  .work-role em { font-style: normal; color: var(--ink); }
-  .work-desc { font-size: 13px; color: var(--c-sub); margin-top: 3px; line-height: 1.5; }
-  .work-footer { margin-top: 20px; }
-  .work-more {
-    font-family: var(--fm); font-size: 10px; letter-spacing: 0.14em;
-    text-transform: uppercase; color: #555; text-decoration: none;
-    transition: color 0.15s;
-  }
-  .work-more:hover { color: var(--ink); }
-
-  /* SKILLS */
-  .skills-grid { display: flex; flex-wrap: wrap; gap: 8px; }
-  .skill-pill {
-    font-size: 13px; font-weight: 500; padding: 8px 14px; border: var(--border);
-    background: var(--bg); cursor: default;
-    border-radius: var(--radius); letter-spacing: -0.01em;
-  }
-
-  /* CONTACT */
-  .cta-strip {
-    background: var(--ink); padding: 40px 48px;
-    display: flex; align-items: center; justify-content: space-between;
-    max-width: 1100px; margin: 0 auto;
-    border-top: var(--border);
-  }
-  .cta-text { font-size: 20px; font-weight: 700; color: var(--bg); letter-spacing: -0.02em; }
-  .cta-text span { color: var(--orange); }
-  .cta-links { display: flex; gap: 0; }
-  .cta-btn {
-    padding: 12px 24px; font-size: 14px; font-weight: 600;
-    text-decoration: none; color: var(--bg); border: 2px solid #444;
-    border-right: none; transition: background 0.15s, border-color 0.15s;
-    letter-spacing: 0.01em;
-  }
-  .cta-btn:last-child { border-right: 2px solid #444; }
-  .cta-btn:hover { background: var(--orange); border-color: var(--orange); }
-
-  
-
-  @media (max-width: 700px) {
-    .hero { grid-template-columns: 1fr; padding: 48px 24px; }
-    .hero-right { flex-direction: row; flex-wrap: wrap; }
-    main { padding: 0 24px; }
-    .projects-grid { grid-template-columns: 1fr; }
-    .project-card { border-right: none !important; border-bottom: var(--border) !important; }
-    .project-card:last-of-type { border-bottom: none !important; }
-    .cta-strip { flex-direction: column; gap: 24px; padding: 32px 24px; }
-  }
-</style>
-
-<script>window.addEventListener('error', e => { if (e.message && e.message.includes('ResizeObserver')) e.stopImmediatePropagation(); });</script>
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/index.css">
 </head>
 <body>
 
-<nav>
-  <a href="index.html" class="nav-logo">Chad Weaver<span></span></a>
-  <ul class="nav-links">
-    <li><a href="#projects" class="nav-link">Projects</a></li>
-    <li><a href="#work" class="nav-link">Work</a></li>
-    <li><a href="about.html" class="nav-link">About</a></li>
-  </ul>
-</nav>
+<nav></nav>
 
 <div class="hero reveal">
   <div>
-    <div class="hero-eyebrow">↳ Chicago, IL — Data analyst & civic tech builder</div>
+    <div class="hero-eyebrow">↳ Chicago, IL — Data analyst &amp; civic tech builder</div>
     <h1 class="hero-title">
       I build tools that make<br>people <span class="underline">think.</span>
     </h1>
@@ -362,7 +28,7 @@ nav {
     <div class="hero-actions">
       <a href="#projects" class="btn-primary">See my projects <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="2.5" y1="6.5" x2="10.5" y2="6.5"/><polyline points="6.5,2.5 10.5,6.5 6.5,10.5"/></svg></a>
       <a href="about.html" class="btn-secondary">About me</a>
-      <a href="Chad_Weaver_Resume.pdf" download class="btn-secondary"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6.5" y1="1.5" x2="6.5" y2="8.5"/><polyline points="3.5,5.5 6.5,9 9.5,5.5"/><line x1="1.5" y1="11.5" x2="11.5" y2="11.5"/></svg> Résumé</a>
+      <a href="chad_weaver_resume.pdf" download class="btn-secondary"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6.5" y1="1.5" x2="6.5" y2="8.5"/><polyline points="3.5,5.5 6.5,9 9.5,5.5"/><line x1="1.5" y1="11.5" x2="11.5" y2="11.5"/></svg> Résumé</a>
     </div>
   </div>
   <div class="hero-right">
@@ -370,9 +36,9 @@ nav {
       <div class="num">1</div>
       <div class="lbl">Live project</div>
     </div>
-    <div class="badge-box" style="background: var(--orange-light);">
-      <div class="num" style="color: var(--orange);">5+</div>
-      <div class="lbl" style="color: var(--orange);">Years in data</div>
+    <div class="badge-box badge-box--orange">
+      <div class="num">5+</div>
+      <div class="lbl">Years in data</div>
     </div>
   </div>
 </div>
@@ -397,12 +63,12 @@ nav {
     <div class="section-label reveal">Projects</div>
     <div class="projects-grid reveal">
 
-      <div class="project-card" onclick="window.location='civic-compass.html'">
+      <div class="project-card" tabindex="0">
         <div class="project-header">
           <div class="project-name">Civic Compass</div>
           <div class="project-header-right">
             <span class="project-badge project-badge--live">Live</span>
-            <a href="civic-compass.html" class="project-arrow" onclick="event.stopPropagation()" aria-label="View project">
+            <a href="civic-compass.html" class="project-arrow" aria-label="View Civic Compass project">
               <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <line x1="2.5" y1="10.5" x2="10.5" y2="2.5"/>
                 <polyline points="4.5,2.5 10.5,2.5 10.5,8.5"/>
@@ -420,12 +86,12 @@ nav {
         </div>
       </div>
 
-      <div class="project-card" onclick="window.location='argument-evaluator.html'">
+      <div class="project-card" tabindex="0">
         <div class="project-header">
           <div class="project-name">Argument Evaluator</div>
           <div class="project-header-right">
             <span class="project-badge">Early stages</span>
-            <a href="argument-evaluator.html" class="project-arrow" onclick="event.stopPropagation()" aria-label="View project">
+            <a href="argument-evaluator.html" class="project-arrow" aria-label="View Argument Evaluator project">
               <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <line x1="2.5" y1="10.5" x2="10.5" y2="2.5"/>
                 <polyline points="4.5,2.5 10.5,2.5 10.5,8.5"/>
@@ -484,12 +150,12 @@ nav {
 
     </div>
     <div class="work-footer reveal">
-      <a href="https://www.linkedin.com/in/cweaver13/" target="_blank" class="work-more">Full work history on LinkedIn →</a>
+      <a href="https://www.linkedin.com/in/cweaver13/" target="_blank" rel="noopener" class="work-more">Full work history on LinkedIn →</a>
     </div>
   </section>
 
   <section id="skills">
-    <div class="section-label reveal">Skills & Tools</div>
+    <div class="section-label reveal">Skills &amp; Tools</div>
     <div class="skills-grid reveal">
       <span class="skill-pill">SQL</span>
       <span class="skill-pill">Python</span>
@@ -514,39 +180,14 @@ nav {
   <div class="cta-text">Want to work together or just say hi? <span>Let's talk.</span></div>
   <div class="cta-links">
     <a href="mailto:chadw913@icloud.com" class="cta-btn">Email</a>
-    <a href="https://www.linkedin.com/in/cweaver13/" target="_blank" class="cta-btn">LinkedIn</a>
-    <a href="Chad_Weaver_Resume.pdf" download class="cta-btn"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6.5" y1="1.5" x2="6.5" y2="8.5"/><polyline points="3.5,5.5 6.5,9 9.5,5.5"/><line x1="1.5" y1="11.5" x2="11.5" y2="11.5"/></svg> Résumé</a>
+    <a href="https://www.linkedin.com/in/cweaver13/" target="_blank" rel="noopener" class="cta-btn">LinkedIn</a>
+    <a href="chad_weaver_resume.pdf" download class="cta-btn"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6.5" y1="1.5" x2="6.5" y2="8.5"/><polyline points="3.5,5.5 6.5,9 9.5,5.5"/><line x1="1.5" y1="11.5" x2="11.5" y2="11.5"/></svg> Résumé</a>
   </div>
 </div>
 
-<footer class="site-footer">
-  <span class="foot-name">Chad Weaver © 2026</span>
-  <span class="foot-year">Chicago, IL</span>
-</footer>
+<footer class="site-footer"></footer>
 
-<script>
-  // Scroll reveal
-  const revealEls = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach((e, i) => {
-      if (e.isIntersecting) {
-        setTimeout(() => e.target.classList.add('visible'), i * 80);
-        observer.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.1 });
-  revealEls.forEach(el => observer.observe(el));
-
-  // Active nav
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-link');
-  window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 100) current = s.id; });
-    navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current));
-  });
-
-
-</script>
+<script defer src="js/main.js"></script>
+<script defer src="js/index.js"></script>
 </body>
 </html>
