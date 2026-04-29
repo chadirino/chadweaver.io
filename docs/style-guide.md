@@ -22,6 +22,7 @@ Used in project card headers and detail page hero meta to communicate project st
 - **Variants:**
   - `EARLY STAGES` / `IN PROGRESS` — base `.project-badge`; border/text: `--orange-text` (`#9e3620`), bg: `--orange-light` (`#fdeae5`); `::before` renders a `×` character (font-size 12px)
   - `LIVE` — add class `project-badge--live`; border: `--green` (`#2d7a4f`), bg: `--green-light` (`#e6f4ed`), text: `--green`; `::before` renders a 6px filled circle with a continuous `live-pulse` keyframe animation (scale + opacity loop, 1.8s)
+  - `PROTOTYPE` — add class `project-badge--prototype`; border: `--blue` (`#1864ab`), bg: `--blue-light` (`#e3eefb`), text: `--blue-text` (`#0d4276`); `::before` renders a static 6px filled blue circle (no animation)
 - **Card header layout:** always group status pill + link arrow together in a `.project-header-right` flex container (`gap: 8px`, `align-items: center`) on the right side of `.project-header`.
 - **Detail page:** use `.project-badge` / `.project-badge--live` inside `.project-meta` alongside `.tag` pills; do not use a plain `.tag` for status.
 

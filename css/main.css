@@ -11,6 +11,9 @@
   --orange-text: #9e3620;
   --green: #2d7a4f;
   --green-light: #e6f4ed;
+  --blue: #1864ab;
+  --blue-light: #e3eefb;
+  --blue-text: #0d4276;
   --border: 2px solid var(--ink);
   --radius: 4px;
   --ff: 'Space Grotesk', sans-serif;
@@ -105,6 +108,53 @@ section:last-child { border-bottom: none; }
 @keyframes live-pulse {
   0%, 100% { opacity: 1; transform: scale(1); }
   50% { opacity: 0.35; transform: scale(0.65); }
+}
+.project-badge--prototype {
+  background: var(--blue-light); color: var(--blue-text); border-color: var(--blue);
+}
+.project-badge--prototype::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--blue);
+  flex-shrink: 0;
+}
+
+/* ── PLACEHOLDER STRIP ── */
+.placeholder-strip {
+  margin-top: 40px; border-top: var(--border);
+  display: grid; grid-template-columns: 1fr; height: auto;
+}
+.placeholder-main {
+  height: 200px;
+  border-bottom: var(--border);
+  background: repeating-linear-gradient(
+    45deg, var(--c-line) 0px, var(--c-line) 1px, transparent 1px, transparent 14px
+  );
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column; gap: 12px;
+}
+.placeholder-main .ph-icon {
+  width: 56px; height: 56px; border: var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 24px; background: var(--bg);
+}
+.placeholder-main span {
+  font-family: var(--fm); font-size: 11px; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--c-medium);
+}
+.placeholder-side {
+  background: var(--ink); padding: 40px;
+  display: flex; flex-direction: column; justify-content: center; gap: 20px;
+}
+.placeholder-side .coming-label {
+  font-family: var(--fm); font-size: 11px; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--orange);
+}
+.placeholder-side .coming-title {
+  font-size: 28px; font-weight: 700; color: #fff; letter-spacing: -0.02em; line-height: 1.2;
+}
+.placeholder-side .coming-desc { font-size: 14px; color: var(--c-dim); line-height: 1.6; }
+@media (min-width: 700px) {
+  .placeholder-strip { grid-template-columns: 1fr 1fr; height: 360px; }
+  .placeholder-main { height: auto; border-bottom: none; border-right: var(--border); }
 }
 
 /* ── BACK LINK ── */
