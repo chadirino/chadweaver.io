@@ -59,5 +59,5 @@ revealEls.forEach(el => revealObserver.observe(el));
 
 lucide.createIcons({
   attrs: { 'stroke-width': 2.5 },
-  icons: { ...lucide.icons, venn: VENN_ICON },
+  icons: { ...lucide.icons, Venn: VENN_ICON },
 });
