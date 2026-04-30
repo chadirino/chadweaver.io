@@ -37,8 +37,7 @@
 
 ## Project Pages
 - Project HTML files live in the `projects/` subdirectory (e.g. `projects/civic-compass.html`).
-- Root-relative paths (starting with `/`) are preferred for nav and cross-page links to avoid depth issues.
-- CSS and JS in project pages use `../assets/css/` and `../assets/js/` prefixes.
+- Root-relative paths (starting with `/`) are preferred.
 
 ## Other Files
 - PDFs go in `assets/pdf/`.

@@ -1,7 +1,10 @@
 const SCROLL_OFFSET = 100;
 
 const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-link');
+
+if (typeof navLinks === 'undefined') {
+  const navLinks = document.querySelectorAll('.nav-link');
+}
 
 window.addEventListener('scroll', () => {
   let current = '';
