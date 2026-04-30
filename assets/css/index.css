@@ -93,11 +93,12 @@
 @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
 /* PROJECTS */
-.project-card-link { display: block; text-decoration: none; color: inherit; }
+.project-card-link { display: block; text-decoration: none; color: inherit; height: 100%; }
 .projects-grid { display: grid; grid-template-columns: 1fr; border: var(--border); }
 .project-card {
   border-right: none; border-bottom: var(--border);
   padding: 28px; cursor: pointer; position: relative; overflow: hidden;
+  height: 100%; box-sizing: border-box;
 }
 .projects-grid:has(.project-soon) .project-card-link:nth-last-child(2) .project-card { border-bottom: none; }
 .project-card::before {
