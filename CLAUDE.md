@@ -1,7 +1,7 @@
 # Site conventions
 
 ## CSS
-- There is a `css/` directory in the project root where all css files will go.
+- There is an `assets/css/` directory where all css files will go.
 - Styles that should be applied to all pages go in `main.css`.
 - Styles that are page-specific go in a css file named after the html file of that page.
 - Never use inline `style=""` attributes for anything reusable.
@@ -11,7 +11,7 @@
 - Consistent naming convention for classes.
 
 ## JavaScript  
-- There is a `js/` directory in the project root where all JS files will go.
+- There is an `assets/js/` directory where all JS files will go.
 - All shared JS goes in `main.js`, loaded with `defer`.
 - Page-specific JS goes in a `.js` file named after the html file it will belong to.
 - Never add inline `<script>` blocks to individual pages.
@@ -35,8 +35,14 @@
 - Before making any CSS or visual changes, read the style guide, `docs/style-guide.md`, and follow it. It is the source of truth for colors, typography, and spacing. Don't invent values not in it without asking.
 - The style guide should be kept up-to-date with any approved style updates.
 
+## Project Pages
+- Project HTML files live in the `projects/` subdirectory (e.g. `projects/civic-compass.html`).
+- Root-relative paths (starting with `/`) are preferred for nav and cross-page links to avoid depth issues.
+- CSS and JS in project pages use `../assets/css/` and `../assets/js/` prefixes.
+
 ## Other Files
-- If other files are needed like images or fonts, they will go in an appropriatly named directory like `images/` or `fonts/`.
+- PDFs go in `assets/pdf/`.
+- If other files are needed like images or fonts, they will go in an appropriately named directory like `assets/images/` or `assets/fonts/`.
 - All file names will be lower-case with no spaces, only underscores.
 
 ## Misc

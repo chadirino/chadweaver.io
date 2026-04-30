@@ -3,11 +3,11 @@ window.addEventListener('error', e => {
 });
 
 const NAV_HTML = `
-  <a href="index.html" class="nav-logo">Chad Weaver<span></span></a>
+  <a href="/index.html" class="nav-logo">Chad Weaver<span></span></a>
   <ul class="nav-links">
-    <li><a href="index.html#projects" class="nav-link">Projects</a></li>
-    <li><a href="index.html#work" class="nav-link">Work</a></li>
-    <li><a href="about.html" class="nav-link">About</a></li>
+    <li><a href="/index.html#projects" class="nav-link">Projects</a></li>
+    <li><a href="/index.html#work" class="nav-link">Work</a></li>
+    <li><a href="/about.html" class="nav-link">About</a></li>
   </ul>
 `;
 
