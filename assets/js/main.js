@@ -58,6 +58,6 @@ const revealObserver = new IntersectionObserver((entries) => {
 revealEls.forEach(el => revealObserver.observe(el));
 
 lucide.createIcons({
-  attrs: { 'stroke-width': 1.75 },
+  attrs: { 'stroke-width': 2.5 },
   icons: { ...lucide.icons, venn: VENN_ICON },
 });
