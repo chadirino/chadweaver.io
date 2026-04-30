@@ -1,0 +1,8 @@
+{
+  "name": "chadweaver-io",
+  "private": true,
+  "devDependencies": {
+    "@lucide/lab": "latest",
+    "lucide": "latest"
+  }
+}

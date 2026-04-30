@@ -1,3 +1,15 @@
+/* LUCIDE ICONS */
+.btn-primary svg,
+.btn-secondary svg {
+  width: 13px;
+  height: 13px;
+}
+
+.project-arrow svg {
+  width: 13px;
+  height: 13px;
+}
+
 /* HERO */
 .hero {
   padding: 48px 24px;

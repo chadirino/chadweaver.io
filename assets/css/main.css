@@ -166,6 +166,19 @@ section:last-child { border-bottom: none; }
 }
 .back-link:hover { color: var(--ink); }
 
+/* ── LUCIDE ICONS ── */
+.next-arrow svg,
+.sidebar-link svg {
+  width: 13px;
+  height: 13px;
+}
+
+.cta-btn svg {
+  width: 13px;
+  height: 13px;
+  vertical-align: middle;
+}
+
 /* ── SCROLL REVEAL ── */
 .reveal {
   opacity: 0; transform: translateY(20px);

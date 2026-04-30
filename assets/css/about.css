@@ -46,6 +46,12 @@
   display: flex; align-items: center; justify-content: center;
   margin-bottom: 14px; background: #1a1a1a;
   border-radius: 10px;
+  color: white;
+}
+
+.value-icon svg {
+  width: 22px;
+  height: 22px;
 }
 .value-title { font-size: 15px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 8px; }
 .value-desc { font-size: 13px; color: var(--c-sub); line-height: 1.6; }
