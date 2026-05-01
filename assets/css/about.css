@@ -42,17 +42,17 @@
 .value-card { padding: 28px; border-bottom: var(--border); }
 .value-card:last-child { border-bottom: none; }
 .value-icon {
-  width: 44px; height: 44px;
+  width: 28px; height: 28px;
   display: flex; align-items: center; justify-content: center;
-  margin-bottom: 14px; background: #1a1a1a;
-  border-radius: 10px;
-  color: white;
+  margin-bottom: 14px;
+  color: var(--ink);
 }
 
 .value-icon svg {
-  width: 22px;
-  height: 22px;
-  stroke-width: 1.5;
+  width: 28px;
+  height: 28px;
+  stroke-width: 2;
+  fill: none;
 }
 .value-title { font-size: 15px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 8px; }
 .value-desc { font-size: 13px; color: var(--c-sub); line-height: 1.6; }

@@ -2,11 +2,6 @@ window.addEventListener('error', e => {
   if (e.message && e.message.includes('ResizeObserver')) e.stopImmediatePropagation();
 });
 
-const VENN_ICON = [
-  ['circle', { cx: '8', cy: '12', r: '6' }],
-  ['circle', { cx: '16', cy: '12', r: '6' }],
-];
-
 const NAV_HTML = `
   <a href="/index.html" class="nav-logo">Chad Weaver<span></span></a>
   <ul class="nav-links">
@@ -59,5 +54,4 @@ revealEls.forEach(el => revealObserver.observe(el));
 
 lucide.createIcons({
   attrs: { 'stroke-width': 2.5 },
-  icons: { ...lucide.icons, Venn: VENN_ICON },
 });
