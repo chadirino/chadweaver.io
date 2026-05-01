@@ -82,4 +82,9 @@ All text must meet WCAG 2.1 AA contrast ratios: **4.5:1** for body/small text, *
 ## Responsive Behavior (Breakpoint: 700px)
 - Collapse 2-column grids (Hero, Projects) into 1 column.
 - Hero badges stack horizontally.
-- Nav: Simplify to core links or implement mobile menu.
+- **Nav (mobile, base styles):** All three links — Projects, Work, About — are visible in a single row. No hamburger menu.
+  - Logo (`.nav-logo`): `font-size: 13px`, `padding: 0 12px` — condensed to reclaim horizontal space.
+  - Links (`.nav-links li a`): `font-size: 11px`, `padding: 0 10px` — fits all three labels at 375–390px widths without wrapping or horizontal scroll.
+  - Labels use short forms: "Projects", "Work", "About".
+  - Bordered layout, Space Grotesk font, and hover/active states are unchanged from desktop.
+- **Nav (desktop, min-width: 700px):** Logo resets to `font-size: 15px`, `padding: 0 24px`; links reset to `font-size: 14px`, `padding: 0 20px`.

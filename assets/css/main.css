@@ -47,8 +47,8 @@ nav {
   display: flex; align-items: stretch; height: 52px;
 }
 .nav-logo {
-  font-weight: 700; font-size: 15px; letter-spacing: -0.02em;
-  padding: 0 24px; display: flex; align-items: center;
+  font-weight: 700; font-size: 13px; letter-spacing: -0.02em;
+  padding: 0 12px; display: flex; align-items: center;
   border-right: var(--border); text-decoration: none; color: var(--ink); white-space: nowrap;
 }
 .nav-logo span {
@@ -56,10 +56,9 @@ nav {
   border-radius: 50%; background: var(--orange); margin-left: 6px; position: relative; top: -1px;
 }
 .nav-links { display: flex; align-items: stretch; list-style: none; margin-left: auto; }
-.nav-links li:not(:last-child) a { display: none; }
 .nav-links li a {
-  display: flex; align-items: center; padding: 0 20px;
-  font-size: 14px; font-weight: 500; text-decoration: none; color: var(--ink);
+  display: flex; align-items: center; padding: 0 10px;
+  font-size: 11px; font-weight: 500; text-decoration: none; color: var(--ink);
   border-left: var(--border); transition: background 0.15s, color 0.15s; letter-spacing: 0.02em;
 }
 .nav-links li a:hover { background: var(--ink); color: var(--bg); }
@@ -281,7 +280,8 @@ section:last-child { border-bottom: none; }
 .next-arrow:hover { background: var(--orange); border-color: var(--orange); color: #fff; }
 
 @media (min-width: 700px) {
-  .nav-links li:not(:last-child) a { display: flex; }
+  .nav-logo { font-size: 15px; padding: 0 24px; }
+  .nav-links li a { font-size: 14px; padding: 0 20px; }
   main { padding: 0 48px; }
   .site-footer { padding: 24px 48px; }
   .cta-strip { flex-direction: row; padding: 40px 48px; gap: 48px; }
