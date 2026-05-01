@@ -38,6 +38,7 @@
 ## Project Pages
 - Project HTML files live in the `projects/` subdirectory (e.g. `projects/civic-compass.html`).
 - Root-relative paths (starting with `/`) are preferred.
+- When a new project page is published, add it to `sitemap.xml` at the project root.
 
 ## Other Files
 - PDFs go in `assets/pdf/`.
