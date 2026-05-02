@@ -177,11 +177,11 @@ section:last-child { border-bottom: none; }
 }
 
 /* ── SCROLL REVEAL ── */
-.reveal {
+.js-loaded .reveal {
   opacity: 0; transform: translateY(20px);
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
-.reveal.visible { opacity: 1; transform: translateY(0); }
+.js-loaded .reveal.visible { opacity: 1; transform: translateY(0); }
 
 /* ── FOOTER ── */
 .site-footer {

@@ -41,6 +41,8 @@ if (path.endsWith('about.html')) {
   navLinks.forEach(a => { if (a.href.includes('#projects')) a.classList.add('active'); });
 }
 
+document.body.classList.add('js-loaded');
+
 const revealEls = document.querySelectorAll('.reveal');
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach((e, i) => {
