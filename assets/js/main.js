@@ -12,7 +12,7 @@ const NAV_HTML = `
 `;
 
 const FOOTER_HTML = `
-  <span class="foot-name">Chad Weaver &copy; 2026</span>
+  <span class="foot-name">Chad Weaver &copy; ${new Date().getFullYear()}</span>
   <span class="foot-year">Chicago, IL</span>
 `;
 
@@ -21,7 +21,7 @@ const CTA_BANNER_HTML = `
   <div class="cta-links">
     <a href="mailto:chadw913@icloud.com" class="cta-btn">Email</a>
     <a href="https://www.linkedin.com/in/cweaver13/" target="_blank" rel="noopener" class="cta-btn">LinkedIn</a>
-    <a href="assets/pdf/chad_weaver_resume.pdf" download class="cta-btn"><i data-lucide="download" aria-hidden="true"></i> Résumé</a>
+    <a href="/assets/pdf/chad_weaver_resume.pdf" download class="cta-btn"><i data-lucide="download" aria-hidden="true"></i> Résumé</a>
   </div>
 `;
 
