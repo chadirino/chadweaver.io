@@ -24,6 +24,7 @@
   --c-ghost: #bbb;
   --c-line: #e8e3da;
   --c-ddd: #ddd;
+  --c-border-dark: #444;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -60,7 +61,7 @@ nav {
   border-left: var(--border); transition: background 0.15s, color 0.15s; letter-spacing: 0.02em;
 }
 .nav-links li a:hover { background: var(--ink); color: var(--bg); }
-.nav-links li a.active { background: var(--orange); color: #fff; }
+.nav-links li a.active { background: var(--orange); color: var(--bg); }
 
 /* ── LAYOUT ── */
 main { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
@@ -146,7 +147,7 @@ section:last-child { border-bottom: none; }
   text-transform: uppercase; color: var(--orange);
 }
 .placeholder-side .coming-title {
-  font-size: 28px; font-weight: 700; color: #fff; letter-spacing: -0.02em; line-height: 1.2;
+  font-size: 28px; font-weight: 700; color: var(--bg); letter-spacing: -0.02em; line-height: 1.2;
 }
 .placeholder-side .coming-desc { font-size: 14px; color: var(--c-dim); line-height: 1.6; }
 @media (min-width: 700px) {
@@ -206,11 +207,11 @@ section:last-child { border-bottom: none; }
 .cta-btn {
   display: flex; align-items: center; gap: 6px;
   padding: 12px 24px; font-size: 14px; font-weight: 600;
-  text-decoration: none; color: var(--bg); border: 2px solid #444;
+  text-decoration: none; color: var(--bg); border: 2px solid var(--c-border-dark);
   border-right: none; transition: background 0.15s, border-color 0.15s;
   letter-spacing: 0.01em;
 }
-.cta-btn:last-child { border-right: 2px solid #444; }
+.cta-btn:last-child { border-right: 2px solid var(--c-border-dark); }
 .cta-btn:hover { background: var(--orange); border-color: var(--orange); }
 
 /* ── SHARED PROJECT PAGE LAYOUT ── */
@@ -238,7 +239,7 @@ section:last-child { border-bottom: none; }
   margin-bottom: 14px; margin-top: 36px;
 }
 .detail-body h2:first-child { margin-top: 0; }
-.detail-body p { font-size: 15px; color: #444; line-height: 1.75; margin-bottom: 14px; }
+.detail-body p { font-size: 15px; color: var(--c-sub); line-height: 1.75; margin-bottom: 14px; }
 .detail-body p strong { color: var(--ink); font-weight: 600; }
 .sidebar-card { border: var(--border); padding: 24px; margin-bottom: 16px; }
 .sidebar-label {
@@ -275,7 +276,7 @@ section:last-child { border-bottom: none; }
   font-size: 18px; text-decoration: none; color: var(--ink);
   transition: background 0.15s, color 0.15s;
 }
-.next-arrow:hover { background: var(--orange); border-color: var(--orange); color: #fff; }
+.next-arrow:hover { background: var(--orange); border-color: var(--orange); color: var(--bg); }
 
 @media (min-width: 700px) {
   .nav-logo { font-size: 15px; padding: 0 24px; }

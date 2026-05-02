@@ -42,7 +42,7 @@ Used for topic/category labels on project cards and detail pages. Rules:
 ### Contact CTA Strip (`.cta-strip`)
 - Dark ink background (`--ink`), full-width, sits above the final footer.
 - Canonical link set: **Email, LinkedIn, Résumé** — GitHub is not included.
-- Buttons use class `.cta-btn`: `padding: 12px 24px`, `border: 2px solid #444`, no gap between buttons (shared borders), hover fills orange.
+- Buttons use class `.cta-btn`: `padding: 12px 24px`, `border: 2px solid var(--c-border-dark)`, no gap between buttons (shared borders), hover fills orange.
 - Mobile: stacks vertically (`flex-direction: column`), padding reduces to `32px 24px`.
 
 ### Project Card Description Text
@@ -71,7 +71,14 @@ All text must meet WCAG 2.1 AA contrast ratios: **4.5:1** for body/small text, *
 |---|---|---|---|
 | `--ink` | `#131212` | ~45:1 | Primary text, headings |
 | `--c-medium` | `#555` | ~6.0:1 | Secondary labels, captions |
-| `--c-sub` | `#666` | ~4.8:1 | Descriptions, metadata |
+| `--c-sub` | `#666` | ~4.8:1 | Body paragraphs, descriptions, metadata |
+
+### Dark-surface border token
+- **`--c-border-dark`** (`#444`) — for borders on the dark `--ink` background (e.g., `.cta-btn`). Do not use on light surfaces; use `--ink` / `--border` there instead.
+
+### Icon stroke widths
+- **Global default:** `2.5px` — set via `lucide.createIcons({ attrs: { 'stroke-width': 2.5 } })` in `main.js`.
+- **Value card icons (`.value-icon svg`):** `2px` — intentional override for large display icons (28×28px). Thinner stroke reads better at that size. Inline and UI icons (13px) use the global 2.5px.
 
 ### Color restrictions
 - **Orange (`--orange: #e8634a`)** — 2.8:1 on cream. Generally not for body text on light backgrounds. Permitted for decorative elements (borders, underlines, fills, dots) and text on the dark `--ink` background. **Intentional brand exceptions:** the hero eyebrow label and the "Years in data" stat box (num + label on `--orange-light`) use `--orange` as accent — these are decorative indicators, not content text.
