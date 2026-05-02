@@ -68,9 +68,21 @@ main { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
 section { padding: 64px 0; border-bottom: var(--border); }
 section:last-child { border-bottom: none; }
 
+/* ── SKIP LINK ── */
+.skip-link {
+  position: absolute; top: -100%; left: 0;
+  padding: 12px 20px; background: var(--ink); color: var(--bg);
+  font-size: 14px; font-weight: 600; z-index: 9999; text-decoration: none;
+}
+.skip-link:focus { top: 0; }
+
+/* ── FOCUS VISIBLE ── */
+:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+.cta-btn:focus-visible { outline-color: var(--bg); }
+
 /* ── SECTION LABEL ── */
 .section-label {
-  font-family: var(--fm); font-size: 10px; letter-spacing: 0.14em;
+  font-family: var(--fm); font-size: 10px; letter-spacing: 0.14em; font-weight: 400;
   text-transform: uppercase; color: var(--c-medium); margin-bottom: 36px;
   display: flex; align-items: center; gap: 10px;
 }

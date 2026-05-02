@@ -25,6 +25,7 @@ const CTA_BANNER_HTML = `
   </div>
 `;
 
+document.body.insertAdjacentHTML('afterbegin', '<a href="#main-content" class="skip-link">Skip to main content</a>');
 document.querySelector('nav').innerHTML = NAV_HTML;
 document.querySelector('footer').innerHTML = FOOTER_HTML;
 
