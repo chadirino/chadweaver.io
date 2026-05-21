@@ -1,7 +1,7 @@
 /* SIDEBAR LINKS */
 .sidebar-link {
   display: flex; align-items: center; justify-content: space-between;
-  padding: 12px 0; border-bottom: 1px solid var(--c-line);
+  padding: 12px 0; border-bottom: var(--border-divider);
   text-decoration: none; color: var(--ink); font-size: 14px; font-weight: 500;
   transition: color 0.15s;
 }

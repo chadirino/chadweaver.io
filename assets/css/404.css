@@ -1,7 +1,7 @@
 .not-found-wrap {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 96px 48px 96px;
+  padding: 64px 24px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -13,20 +13,20 @@
   font-size: 11px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--c-medium);
+  color: var(--c-text-2);
 }
 
 .not-found-heading {
   font-size: clamp(40px, 7vw, 72px);
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  line-height: 1.05;
+  font-weight: 700;
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--lh-heading);
   margin: 0;
 }
 
 .not-found-body {
   font-size: 18px;
-  color: var(--c-sub);
+  color: var(--c-text-3);
   margin: 0;
   max-width: 480px;
 }
@@ -48,8 +48,8 @@
   border-bottom-color: var(--orange);
 }
 
-@media (max-width: 700px) {
+@media (min-width: 700px) {
   .not-found-wrap {
-    padding: 64px 24px;
+    padding: 96px 48px;
   }
 }

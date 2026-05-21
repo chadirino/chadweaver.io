@@ -17,15 +17,15 @@
 .about-photo-col  { grid-area: photo; align-self: center; }
 
 .about-eyebrow {
-  font-family: var(--fm); font-size: 11px; letter-spacing: 0.12em;
+  font-family: var(--fm); font-size: 11px; letter-spacing: var(--tracking-loose);
   text-transform: uppercase; color: var(--orange); margin-bottom: 8px;
 }
 .about-name {
   font-size: clamp(24px, 7vw, 36px); font-weight: 700;
-  line-height: 1.05; letter-spacing: -0.03em; margin-bottom: 0;
+  line-height: var(--lh-heading); letter-spacing: var(--tracking-tight); margin-bottom: 0;
 }
 .about-name span { color: var(--purple); }
-.about-bio { font-size: 17px; line-height: 1.75; color: var(--c-sub); max-width: 540px; }
+.about-bio { font-size: 17px; line-height: 1.75; color: var(--c-text-3); max-width: 540px; }
 .about-bio p + p { margin-top: 16px; }
 .about-bio strong { color: var(--ink); font-weight: 600; }
 
@@ -56,7 +56,7 @@
   fill: none;
 }
 .value-title { font-size: 15px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 8px; }
-.value-desc { font-size: 13px; color: var(--c-sub); line-height: 1.6; }
+.value-desc { font-size: 13px; color: var(--c-text-3); line-height: 1.6; }
 
 /* RIGHT NOW */
 .now-grid { display: grid; grid-template-columns: 1fr; border: var(--border); }
@@ -66,7 +66,7 @@
   font-family: var(--fm); font-size: 10px; letter-spacing: 0.1em;
   text-transform: uppercase; color: var(--orange); margin-bottom: 8px;
 }
-.now-text { font-size: 14px; line-height: 1.6; color: var(--c-sub); }
+.now-text { font-size: 14px; line-height: 1.6; color: var(--c-text-3); }
 .now-text strong { color: var(--ink); font-weight: 600; }
 
 /* Photo placeholder elements (shown when no image is loaded) */
@@ -83,7 +83,7 @@
 }
 .photo-box-label span {
   font-family: var(--fm); font-size: 10px; letter-spacing: 0.1em;
-  text-transform: uppercase; color: var(--c-medium);
+  text-transform: uppercase; color: var(--c-text-2);
 }
 
 @media (min-width: 700px) {
@@ -97,13 +97,13 @@
   }
   .about-photo-col { align-self: start; }
   .about-eyebrow { margin-bottom: 20px; }
-  .about-name { font-size: clamp(40px, 5vw, 68px); margin-bottom: 24px; }
+  .about-name { font-size: clamp(40px, 5vw, 68px); line-height: var(--lh-heading); letter-spacing: var(--tracking-tight); margin-bottom: 24px; }
   .photo-box {
     width: auto; height: auto;
     border-radius: 0;
     aspect-ratio: 3/4;
     position: relative;
-    background: repeating-linear-gradient(45deg, var(--c-line) 0px, var(--c-line) 1px, transparent 1px, transparent 14px);
+    background: repeating-linear-gradient(45deg, var(--c-line) 0px, var(--c-line) 1px, transparent 1px, transparent 12px);
   }
   .photo-box img { object-position: center; }
   .values-grid { grid-template-columns: repeat(3, 1fr); }

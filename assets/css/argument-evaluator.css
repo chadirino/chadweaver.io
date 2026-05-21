@@ -8,7 +8,7 @@
   font-family: var(--fm); font-size: 11px; letter-spacing: 0.06em;
   color: var(--ink); font-weight: 700; flex-shrink: 0; padding-top: 2px;
 }
-.feature-text { font-size: 14px; color: var(--c-sub); line-height: 1.5; }
+.feature-text { font-size: 14px; color: var(--c-text-3); line-height: 1.5; }
 .feature-text strong { color: var(--ink); font-weight: 600; }
 
 /* NOTIFY FORM */
@@ -22,7 +22,7 @@
   padding: 10px 16px; background: var(--ink); color: var(--bg);
   border: var(--border); font-family: var(--ff); font-size: 13px;
   font-weight: 600; cursor: pointer; transition: background 0.15s;
-  letter-spacing: 0.01em;
+  letter-spacing: var(--tracking-normal);
 }
 .notify-form button:hover { background: var(--orange); border-color: var(--orange); }
 .notify-confirm {
